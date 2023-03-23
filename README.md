@@ -4,7 +4,7 @@ This tool is designed to enable blind people to touch and feel drawings using a 
 
 
 
-Features
+**Features** 
 
   •	Select standard shapes from a drop-down list (circle, triangle, and rectangle)
  
@@ -24,7 +24,7 @@ Features
 
 
 
-Usage
+**Usage**
 
    The Braille Printer Service provides a drop-down list of supported shapes, including circle, triangle, and rectangle, as well as a list of supported Braille 
    characters. The client tool allows the user to select a shape or Braille character, and request the required parameters from the service.
@@ -38,7 +38,7 @@ Usage
 
 
 
-Technologies Used
+**Technologies Used**
 
     • .NET Framework for development
   
