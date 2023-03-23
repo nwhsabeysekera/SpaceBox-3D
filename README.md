@@ -36,7 +36,7 @@ This tool is designed to enable blind people to touch and feel drawings using a 
       selected, the service will count the number of dots required to compute the required liquid.
   
     • The client tool provides a form where the user can provide values for the requested parameters, and the service will perform the 
-    computation and send the results back to the client application.
+      computation and send the results back to the client application.
 
 
 
