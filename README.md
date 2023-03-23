@@ -22,15 +22,12 @@ Features
 
 Usage
 
-   The Braille Printer Service provides a drop-down list of supported shapes, including circle, triangle, and rectangle, as well as a list of supported Braille      
-   characters. The client tool allows the user to select a shape or Braille character, and request the required parameters from the service.
+   The Braille Printer Service provides a drop-down list of supported shapes, including circle, triangle, and rectangle, as well as a list of supported Braille characters. The client tool allows the user to select a shape or Braille character, and request the required parameters from the service.
   
    When a standard shape is selected, the service will retrieve the list of parameters related to the shape, such as the radius and center for a circle, and compute 
-   the perimeter so that the required dot amount can be determined. When a Braille character is selected, the service will count the number of dots required to  
-   compute the required liquid.
+   the perimeter so that the required dot amount can be determined. When a Braille character is selected, the service will count the number of dots required to compute the required liquid.
   
-   The client tool provides a form where the user can provide values for the requested parameters, and the service will perform the computation and send the results 
-   back to the client application.
+   The client tool provides a form where the user can provide values for the requested parameters, and the service will perform the computation and send the results back to the client application.
 
 Technologies Used
 
