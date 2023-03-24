@@ -11,8 +11,17 @@ namespace SpaceBox_3D
 {
 
 
-    public partial class _Default
+    public partial class Shapes
     {
+
+        /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Label1 control.
@@ -24,21 +33,12 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// btnShapes control.
+        /// SelectShape control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShapes;
-
-        /// <summary>
-        /// btnBraille control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBraille;
+        protected global::System.Web.UI.WebControls.DropDownList SelectShape;
     }
 }
