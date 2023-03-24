@@ -126,6 +126,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="BrailleConvertor\MapTextToBraille.json" />
+    <Content Include="BrailleConvertor\MapBrailleToText.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="postcss.config.js" />
     <Content Include="PrintPage.aspx" />
