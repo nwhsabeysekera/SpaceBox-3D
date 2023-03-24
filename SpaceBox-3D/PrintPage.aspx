@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SpaceBox_3D._Default" %>
+﻿<%@ Page Title="Home - Print" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SpaceBox_3D._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="./Content/styles.css" rel="stylesheet" />
@@ -11,6 +11,12 @@
         <div class="flex flex-col justify-center items-center h-screen gap-20">
 
             <asp:Label ID="Label1" runat="server" Text="SpaceBox 3D" Font-Names="Readex Pro Deca Medium" Font-Size="120px" ForeColor="#E6A02D"></asp:Label>
+    
+            <asp:UpdateProgress ID="ProgressBar" runat="server" DisplayAfter="0">
+                <ProgressTemplate>
+                    Printing in Progress
+                </ProgressTemplate>
+            </asp:UpdateProgress>
     
             <p class="flex justify-center gap-32">
 

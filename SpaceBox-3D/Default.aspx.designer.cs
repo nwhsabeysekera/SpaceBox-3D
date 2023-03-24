@@ -24,6 +24,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// ProgressBar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress ProgressBar;
+
+        /// <summary>
         /// btnShapes control.
         /// </summary>
         /// <remarks>
