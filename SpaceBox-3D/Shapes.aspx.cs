@@ -13,5 +13,10 @@ namespace SpaceBox_3D
         {
 
         }
+
+        protected void Length_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

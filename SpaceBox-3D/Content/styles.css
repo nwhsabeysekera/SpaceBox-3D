@@ -353,6 +353,15 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     max-width: 1536px;
   }
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -377,4 +386,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .bg-maincolor {
   --tw-bg-opacity: 1;
   background-color: rgb(47 47 47 / var(--tw-bg-opacity));
+}
+.text-left {
+  text-align: left;
 }
