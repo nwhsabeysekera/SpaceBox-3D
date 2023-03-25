@@ -13,7 +13,7 @@
 
     <title>Shapes</title>
 </head>
-<body>
+<body style="background-color: #2f2f2f";>
 
     <form id="form1" runat="server">
         <div class="container">
@@ -54,18 +54,16 @@
             </div>
         
  <div Style="position: absolute; top: 450px; left: 770px;">
-        <asp:CheckBox ID="CheckBox" runat="server" AutoPostBack="True" BorderColor="#FFCB74" Font-Names="readex pro deca medium" Font-Size="20px" Font-Strikeout="False" Text="Fill" TextAlign="Left"  />
+        <asp:CheckBox ID="CheckBox" runat="server" AutoPostBack="True" BorderColor="#FFCB74" Font-Names="readex pro deca medium" Font-Size="20px" Font-Strikeout="False" Text="Fill" TextAlign="Left" ForeColor="White"  />
      </div>
 
         <div Style="position: absolute; top: 500px; left: 768px;">
-        <asp:Button ID="btnApply" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="55px" Text="Apply" Width="110px" style="border-radius: 40px;" />
+        <asp:Button ID="btnApply" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="55px" Text="Apply" Width="110px" style="border-radius: 40px;" Font-Names="readex pro deca medium" Font-Size="20px" />
             </div>
         <div Style="position: absolute; top: 500px; left: 910px;">
-        <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="55px" Text="Clear" Width="110px" style="border-radius: 40px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" />
+        <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="55px" Text="Clear" Width="110px" style="border-radius: 40px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="20px" />
             </div>
         <div Style="position: absolute; top: 600px; left: 600px;">
-
-        <asp:Image ID="Image1" runat="server" Width="1080px" />
             </div>
     </form>
 
