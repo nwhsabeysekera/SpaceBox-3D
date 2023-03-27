@@ -18,9 +18,13 @@ namespace SpaceBoxService.BrailleService
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public string ConvertToBraille(string input)
         {
-            return "Hello World";
+            //create a instance of the App_Code.BrailleService class in the MainClass class file
+            App_Code.BrailleService service = new App_Code.BrailleService();
+            //call SplitIntoComponents method
+            string output = service.TrasnlateToBraille(input);
+            return output;
         }
     }
 }
