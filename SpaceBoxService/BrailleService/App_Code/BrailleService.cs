@@ -53,7 +53,7 @@ namespace SpaceBoxService.BrailleService.App_Code
         //Convert char to braille.
         public string ConvertCharTobraille(string input)
         {
-            string jsonfile = File.ReadAllText("MapTextToBraille.json");
+            string jsonfile = File.ReadAllText("C:\\Users\\Hasini\\OneDrive\\Desktop\\github\\assignment\\SpaceBox-3D\\SpaceBoxService\\BrailleService\\App_Code\\MapTextToBraille.json");
             var dictionary = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonfile);
 
 
