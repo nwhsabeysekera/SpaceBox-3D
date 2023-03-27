@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBox-3D", "SpaceBox-3D\SpaceBox-3D.csproj", "{CB06B456-940F-4E72-B2DF-675BF60E2881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrailleService", "BrailleService\BrailleService.csproj", "{7A0006A0-3F99-4C43-92E3-5E86F9302CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBoxService", "BrailleService\SpaceBoxService.csproj", "{7A0006A0-3F99-4C43-92E3-5E86F9302CAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
