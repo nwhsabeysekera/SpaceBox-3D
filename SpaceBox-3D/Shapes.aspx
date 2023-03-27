@@ -67,13 +67,11 @@
 
         
         <div Style="position: absolute; top: 650px; left: 460px;">
+
         <div style="width: 557px; height: 100px; background-color: #3B3B3B;"></div>
         </div>  
 
 
-
-
-     
    
         <div Style="position: absolute; top: 770px; left: 600px;">
         <asp:Button ID="btnPrint" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="55px" Text="Print" Width="120px" style="border-radius: 40px;" Font-Names="readex pro deca medium" Font-Size="20px" />

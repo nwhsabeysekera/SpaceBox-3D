@@ -11,6 +11,28 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            {
+                // Register the drawPreviewRectangle() function
+                string script = "<script type='text/javascript'>" +
+                                "function drawPreviewRectangle() {" +
+                                "   // Get the values from the form" +
+                                "   var width = document.getElementById('width').value;" +
+                                "   var height = document.getElementById('height').value;" +
+                                "   // Get the canvas element" +
+                                "   var canvas = document.getElementById('previewCanvas');" +
+                                "   // Check if the canvas is supported" +
+                                "   if (canvas.getContext) {" +
+                                "       var ctx = canvas.getContext('2d');" +
+                                "       // Clear the canvas" +
+                                "       ctx.clearRect(0, 0, canvas.width, canvas.height);" +
+                                "       // Draw the preview rectangle" +
+                                "       ctx.fillStyle = 'blue';" +
+                                "       ctx.fillRect(10, 10, width, height);" +
+                                "   }" +
+                                "}" +
+                                "</script>";
+                ClientScript.RegisterStartupScript(this.GetType(), "MyScript", script);
+            }
 
         }
 
@@ -18,5 +40,16 @@ namespace SpaceBox_3D
         {
 
         }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            // Code to handle the button click event
+
+            // Register a script block to execute a JavaScript function
+            string script = "<script type='text/javascript'>drawPreviewRectangle();</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "MyScript", script);
+        }
     }
+    }
+    
 }
