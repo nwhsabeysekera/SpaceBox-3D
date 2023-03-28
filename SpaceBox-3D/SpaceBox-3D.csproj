@@ -115,6 +115,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Braille.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -190,6 +191,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Braille.aspx.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Braille.aspx.designer.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
     <Compile Include="BrailleConvertor\MainClass.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
