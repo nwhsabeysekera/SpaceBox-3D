@@ -124,7 +124,6 @@
     <Content Include="Content\styles.css" />
     <Content Include="Content\tailwind.css" />
     <Content Include="Default.aspx" />
-    <Content Include="ExForm1.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -211,13 +210,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExForm1.aspx.cs">
-      <DependentUpon>ExForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExForm1.aspx.designer.cs">
-      <DependentUpon>ExForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

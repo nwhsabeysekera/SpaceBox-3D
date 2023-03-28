@@ -38,12 +38,12 @@
                 </div>
                
               <div Style="position: absolute; top: 65px; left: 300px;">
-                 <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" OnTextChanged="Length_TextChanged" PlaceHolder="Width"  style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder">Width</asp:TextBox>
+                  <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Width" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Width_TextChanged">Width</asp:TextBox>
                </div>
         
         
                   <div Style="position: absolute; top: 135px; left: 300px;">
-                 <asp:TextBox ID="Thickness" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" OnTextChanged="Length_TextChanged" PlaceHolder="Thickness"  style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder">Thickness</asp:TextBox>
+                      <asp:TextBox ID="Thickness" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Thickness" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True">Thickness</asp:TextBox>
                 </div>
 
                  </div>
