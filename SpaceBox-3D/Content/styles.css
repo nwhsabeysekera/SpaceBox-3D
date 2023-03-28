@@ -383,6 +383,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .gap-32 {
   gap: 8rem;
 }
+.gap-5 {
+  gap: 1.25rem;
+}
 .bg-maincolor {
   --tw-bg-opacity: 1;
   background-color: rgb(47 47 47 / var(--tw-bg-opacity));

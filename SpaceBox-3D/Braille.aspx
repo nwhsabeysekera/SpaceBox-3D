@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Braille.aspx.cs" Inherits="SpaceBox_3D.Braille" %>
+﻿<%@ Page Title="Braille" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Braille.aspx.cs" Inherits="SpaceBox_3D.Braille" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+    <main aria-labelledby="title">
+   
+        <div class="flex flex-col gap-5 justify-center">
+
+            <asp:Label ID="Label1" runat="server" Text="SpaceBox 3D" Font-Names="Readex Pro Deca Medium" Font-Size="60pt" ForeColor="#E6A02D" CssClass="flex justify-center"></asp:Label>
+
         </div>
-    </form>
-</body>
-</html>
+
+    </main>
+</asp:Content>
+
