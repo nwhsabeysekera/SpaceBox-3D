@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBox-3D", "SpaceBox-3D\SpaceBox-3D.csproj", "{CB06B456-940F-4E72-B2DF-675BF60E2881}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E126803-6DF0-43AA-A81C-88836B1571BC} = {4E126803-6DF0-43AA-A81C-88836B1571BC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceBoxService", "SpaceBoxService\SpaceBoxService.csproj", "{4E126803-6DF0-43AA-A81C-88836B1571BC}"
 EndProject

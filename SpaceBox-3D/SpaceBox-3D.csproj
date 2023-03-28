@@ -50,6 +50,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -106,6 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <None Include="Connected Services\BrailleServiceReference\BrailleService.disco" />
+    <None Include="Connected Services\BrailleServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\BrailleServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\BrailleServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -128,6 +137,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="BrailleConvertor\MapTextToBraille.json" />
     <Content Include="BrailleConvertor\MapBrailleToText.json" />
+    <None Include="Connected Services\BrailleServiceReference\BrailleService.wsdl" />
+    <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="postcss.config.js" />
     <Content Include="Print.aspx" />
@@ -179,6 +192,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
     <Compile Include="BrailleConvertor\MainClass.cs" />
+    <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +264,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BrailleServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
