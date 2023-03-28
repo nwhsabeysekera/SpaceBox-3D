@@ -23,7 +23,11 @@ namespace SpaceBox_3D
         {
            
         }
-    
+
+        protected void Width_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
