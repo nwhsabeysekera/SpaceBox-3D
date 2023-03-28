@@ -96,13 +96,13 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// Preview control.
+        /// PreviewPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Preview;
+        protected global::System.Web.UI.WebControls.Panel PreviewPanel;
 
         /// <summary>
         /// btnPrint control.

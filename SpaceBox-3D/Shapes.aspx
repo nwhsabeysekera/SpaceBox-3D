@@ -61,25 +61,27 @@
         
             
      
-        <div Style="position: absolute; top: 650px; left: 460px;">
-        <asp:TextBox ID="Preview" runat="server" BackColor="#3B3B3B" BorderColor="#3B3B3B" BorderStyle="Dotted" Height="100px" MaxLength="150000" ReadOnly="True" Width="557px"></asp:TextBox>
-        </div>
-
-        
-        <div Style="position: absolute; top: 650px; left: 460px;">
-
-        <div style="width: 557px; height: 100px; background-color: #3B3B3B;"></div>
+        <div Style="position: absolute; top: 600px; left: 460px;">
+            <asp:Panel ID="PreviewPanel" runat="server" BackColor="#3B3B3B" Height="200px" Width="568px">
+        </asp:Panel>
         </div>  
 
 
    
-        <div Style="position: absolute; top: 770px; left: 600px;">
+        <div Style="position: absolute; top: 830px; left: 600px;">
         <asp:Button ID="btnPrint" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="55px" Text="Print" Width="120px" style="border-radius: 40px;" Font-Names="readex pro deca medium" Font-Size="20px" />
         </div>
                          
-         <div Style="position: absolute; top: 770px; left: 770px;">
+         <div Style="position: absolute; top: 830px; left: 770px;">
         <asp:Button ID="btnCancel" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="55px" Text="Cancel" Width="120px" style="border-radius: 40px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="20px" />
         </div>
+
+
+
+
+     
+   
+        
 
 
 
