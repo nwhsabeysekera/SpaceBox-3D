@@ -11,6 +11,7 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             Length.Visible = true;
             Width.Visible = true;
             Radius.Visible = false;
@@ -44,8 +45,15 @@ namespace SpaceBox_3D
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-
+            Length.Text = "";
+            Width.Text = "";
+            Radius.Text = "";
+            Base.Text = "";
+            SelectShape.SelectedIndex = 0;
         }
+    
+
+    
 
         protected void btnShowPreview_Click(object sender, EventArgs e)
         {
@@ -92,6 +100,9 @@ namespace SpaceBox_3D
 
         protected void SelectShape_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
+            
             // Get the selected shape from the dropdown list
             string selectedShape = SelectShape.SelectedValue;
 
@@ -120,9 +131,12 @@ namespace SpaceBox_3D
                 Width.Visible = false;
                 Radius.Visible = false;
                 Base.Visible = true;
+
+                
             }
         }
     }
+
     
     
 }
