@@ -16,8 +16,6 @@ namespace SpaceBoxService.ShapeService
     // [System.Web.Script.Services.ScriptService]
     public class ShapeService : System.Web.Services.WebService
     {
-
-
     }
 
 }
