@@ -60,13 +60,22 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Width;
 
         /// <summary>
-        /// Thickness control.
+        /// Radius control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Thickness;
+        protected global::System.Web.UI.WebControls.TextBox Radius;
+
+        /// <summary>
+        /// Base control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Base;
 
         /// <summary>
         /// CheckBox control.
@@ -96,13 +105,31 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// PreviewPanel control.
+        /// btnShowPreview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PreviewPanel;
+        protected global::System.Web.UI.WebControls.Button btnShowPreview;
+
+        /// <summary>
+        /// PreveiwPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PreveiwPanel;
+
+        /// <summary>
+        /// LabelPreview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelPreview;
 
         /// <summary>
         /// btnPrint control.
