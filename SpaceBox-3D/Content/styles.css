@@ -391,6 +391,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .relative {
   position: relative;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -421,9 +425,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .gap-32 {
   gap: 8rem;
 }
-.gap-5 {
-  gap: 1.25rem;
-}
 .border-0 {
   border-width: 0px;
 }
@@ -438,6 +439,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .bg-primary-grey {
   --tw-bg-opacity: 1;
   background-color: rgb(59 59 59 / var(--tw-bg-opacity));
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .text-left {
   text-align: left;
