@@ -216,6 +216,36 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
+[type='text'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-shadow: 0 0 #0000;
+}
+
+[type='text']:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2563eb;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  border-color: #2563eb;
+}
+
 ::-webkit-datetime-edit-fields-wrapper {
   padding: 0;
 }
@@ -361,6 +391,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .relative {
   position: relative;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .inline-block {
   display: inline-block;
 }
@@ -369,6 +402,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 .h-screen {
   height: 100vh;
+}
+.flex-row {
+  flex-direction: row;
 }
 .flex-col {
   flex-direction: column;
@@ -388,10 +424,46 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .gap-5 {
   gap: 1.25rem;
 }
+.border-0 {
+  border-width: 0px;
+}
+.border-primary-grey {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 59 59 / var(--tw-border-opacity));
+}
 .bg-maincolor {
   --tw-bg-opacity: 1;
   background-color: rgb(47 47 47 / var(--tw-bg-opacity));
 }
+.bg-primary-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 59 59 / var(--tw-bg-opacity));
+}
 .text-left {
   text-align: left;
+}
+.font-readex {
+  font-family: Readex Pro, sans-serif;
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.focus\:border-primary-grey:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 59 59 / var(--tw-border-opacity));
+}
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.focus\:ring-primary-grey:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 59 59 / var(--tw-ring-opacity));
 }
