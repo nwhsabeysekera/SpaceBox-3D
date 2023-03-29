@@ -23,90 +23,90 @@ namespace SpaceBoxService.ShapeService
             int CalculateDots();
         }
 
-         public class Rectangle : IShape
-         {
-             public void LoadParameters()
-             {
-                 // Load rectangle parameters
-                 Width = LoadRectangleWidthFromService();
-                 Length = LoadRectangleLengthFromService();
-             }
+        public class Rectangle : IShape
+        {
+            public void LoadParameters()
+            {
+                // Load rectangle parameters
+                Width = LoadRectangleWidthFromService();
+                Length = LoadRectangleLengthFromService();
+            }
 
-             public int CalculateDots()
-             {
-                 // Calculate dots for rectangle
-                 return Width * Length;
+            public int CalculateDots()
+            {
+                // Calculate dots for rectangle
+                return Width * Length;
 
-             }
+            }
 
-             private int LoadRectangleWidthFromService()
-             {
+            private int LoadRectangleWidthFromService()
+            {
                 // Load rectangle width from service
                 Width = LoadRectangleWidthFromService();
 
-             }
+            }
 
-             private int LoadRectangleLengthFromService()
-             {
+            private int LoadRectangleLengthFromService()
+            {
                 // Load rectangle length from service
                 Length = LoadRectangleLengthFromService();
-                 return 0;
-             }
-         }
+                return 0;
+            }
+        }
 
-         public class Circle : IShape
-         {
-             public void LoadParameters()
-             {
-                 // Load circle parameters
-                 Radius = LoadCircleRadiusFromService();
+        public class Circle : IShape
+        {
+            public void LoadParameters()
+            {
+                // Load circle parameters
+                Radius = LoadCircleRadiusFromService();
 
-             }
+            }
 
-             public int CalculateDots()
-             {
-                 // Calculate dots for circle
-                 return (int)(Math.PI * Math.Pow(Radius, 2));
+            public int CalculateDots()
+            {
+                // Calculate dots for circle
+                return (int)(Math.PI * Math.Pow(Radius, 2));
 
-             }
-         }
+            }
+        }
 
-         public class Triangle : IShape
-         {
-             public void LoadParameters()
-             {
-                 // Load triangle parameters
-                 Base = LoadTriangleBaseLengthFromService();
-                 Length = LoadTriangleLengthFromService();
-             }
+        public class Triangle : IShape
+        {
+            public void LoadParameters()
+            {
+                // Load triangle parameters
+                Base = LoadTriangleBaseLengthFromService();
+                Length = LoadTriangleLengthFromService();
+            }
 
-             public int CalculateDots()
-             {
-                 // Calculate dots for triangle
-                 return (int)(0.5 * Base * Length);
+            public int CalculateDots()
+            {
+                // Calculate dots for triangle
+                return (int)(0.5 * Base * Length);
 
-             }
-         }
+            }
+        }
 
-         public class ShapeFactory
-         {
-             public IShape GetShape(string SelectShape)
-             {
-                 switch (SelectShape.ToLower())
-                 {
-                     case "rectangle":
-                         return new Rectangle();
-                     case "circle":
-                         return new Circle();
-                     case "triangle":
-                         return new Triangle();
-                     default:
-                         throw new ArgumentException("Invalid shape type.");
-                 }
-             }
+        public class ShapeFactory
+        {
+            public IShape GetShape(string SelectShape)
+            {
+                switch (SelectShape.ToLower())
+                {
+                    case "rectangle":
+                        return new Rectangle();
+                    case "circle":
+                        return new Circle();
+                    case "triangle":
+                        return new Triangle();
+                    default:
+                        throw new ArgumentException("Invalid shape type.");
+                }
+            }
 
-         }
-        
+        }
+
     }
 
 }
