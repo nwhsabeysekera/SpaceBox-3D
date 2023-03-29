@@ -34,19 +34,19 @@
 
 
              <div Style="position: absolute; top: -2px; left: 300px;">  
-             <asp:TextBox ID="Length" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White"  PlaceHolder="Length"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="Length_TextChanged" >Length</asp:TextBox>
+             <asp:TextBox ID="Length" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White"  PlaceHolder="Length || 0mm"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="Length_TextChanged" >Length</asp:TextBox>
              </div>
                
               <div Style="position: absolute; top: 65px; left: 300px;">
-              <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Width" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Width_TextChanged" >Width</asp:TextBox>
+              <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Width || 0mm" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Width_TextChanged" >Width</asp:TextBox>
                </div>
 
              <div Style="position: absolute; top: -1px; left: 300px;">
-             <asp:TextBox ID="Radius" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Radius" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Radius_TextChanged">Radius</asp:TextBox>
+             <asp:TextBox ID="Radius" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Radius || 0mm" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Radius_TextChanged">Radius</asp:TextBox>
              </div>
 
              <div Style="position: absolute; top: 65px; left: 300px;">
-            <asp:TextBox ID="Base" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White"  PlaceHolder="Base"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder"  >Base</asp:TextBox>
+            <asp:TextBox ID="Base" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="50px" TextMode="Number" Width="250px" ForeColor="White"  PlaceHolder="Base || 0mm"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder"  >Base</asp:TextBox>
             </div>
 
             </div>
