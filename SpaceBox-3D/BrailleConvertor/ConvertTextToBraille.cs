@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,44 @@ namespace SpaceBox_3D.BrailleConvertor
 {
     public class ConvertTextToBraille
     {
+        private Dictionary<char, string> mapLettersToBraille = new Dictionary<char, string>()
+        {
+            {'a', "⠁"}, {'b', "⠃"}, {'c', "⠉"}, {'d', "⠙"}, {'e', "⠑"}, {'f', "⠋"},
+            {'g', "⠛"}, {'h', "⠓"}, {'i', "⠊"}, {'j', "⠚"}, {'k', "⠅"}, {'l', "⠇"},
+            {'m', "⠍"}, {'n', "⠝"}, {'o', "⠕"}, {'p', "⠏"}, {'q', "⠟"}, {'r', "⠗"},
+            {'s', "⠎"}, {'t', "⠞"}, {'u', "⠥"}, {'v', "⠧"}, {'w', "⠺"}, {'x', "⠭"},
+            {'y', "⠽"}, {'z', "⠵"}, {' ', "⠀"}
+        };
+
+        private Dictionary<char, string> mapNumberToBraille = new Dictionary<char, string>()
+        {
+            {'1', "⠁⠂"}, {'2', "⠁⠃"}, {'3', "⠁⠉"},
+            {'4', "⠁⠙"}, {'5', "⠢"}, {'6', "⠁⠋"},
+            {'7', "⠁⠛"}, {'8', "⠁⠓"}, {'9', "⠁⠊"},
+            {'0', "⠚⠚"}
+        };
+
+        private Dictionary<char, string> mapSymbolsToBraille = new Dictionary<char, string>()
+        {
+            {'.', "⠲"}, {',', "⠂"}, {';', "⠆"}, {':', "⠒"}, {'?', "⠢"}, {'!', "⠖"},
+            {'(', "⠐⠣"}, {')', "⠐⠜"}, {'/', "⠸⠌"}, {'-', "⠤"}, {'_', "⠤"},
+            {'\'', "⠄"}, {'\"', "⠄⠄"}, {'@', "⠈⠢⠤"}, {'&', "⠈⠯"}, {'#', "⠼⠁⠚"},
+            {'$', "⠼⠁⠎"}, {'%', "⠼⠃⠴"}, {'^', "⠼⠑⠉"}, {'*', "⠔"}
+        };
+
+        private Dictionary<string, string> mapContractionsToBraille = new Dictionary<string, string>()
+        {
+            {"but", "⠯"}, {"can", "⠙"}, {"do", "⠥"}, {"every", "⠑⠗⠑⠛⠑"},
+            {"from", "⠋⠗⠁⠍"}, {"go", "⠛⠕"}, {"have", "⠓⠁⠧⠑"}, {"just", "⠚⠥⠎"},
+            {"knowledge", "⠅⠇⠕⠛⠊⠇⠇⠑⠗⠑"}, {"like", "⠇⠊⠅⠑"}, {"more", "⠍⠕⠗⠑"},
+            {"not", "⠝⠕⠞"}, {"people", "⠏⠑⠛⠇⠑"}, {"quite", "⠟⠗⠑⠞⠑"}, {"rather", "⠗⠁⠞⠑⠗"},
+            {"so", "⠎⠕"}, {"that", "⠞⠁⠞"}, {"us", "⠥⠎"}, {"very", "⠧⠑⠗⠽"},
+            {"it", "⠊⠞"}, {"you", "⠽⠕⠥"}, {"as", "⠁⠎"}, {"and", "⠁⠝⠙"},
+            {"for", "⠋⠕⠗"}, {"of", "⠕⠋"}, {"the", "⠞⠓⠑"}, {"with", "⠺⠊⠞"},
+            {"will", "⠺⠊⠇⠇"}, {"his", "⠓⠊⠎"}, {"in", "⠊⠝"}, {"was", "⠺⠁⠎"},
+            {"to", "⠞⠕"}
+        };
+
         public string[] SplitStringIntoComponents(string input) 
         {
             // Split the input string into components
@@ -53,32 +92,46 @@ namespace SpaceBox_3D.BrailleConvertor
         //Convert char to braille.
         public string ConvertCharTobraille(string input)
         {
-            string jsonfile = File.ReadAllText("MapTextToBraille.json");
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(jsonfile);
-
-
             // Check if char is present in any of the dictionaries
-            if (dictionary["letters_to_braille"].ContainsKey(input))
+            if (mapLettersToBraille.ContainsValue(input))
             {
-                return dictionary["letters_to_braille"][input];
+                // Iterate through the symbols dictionary to find the matching key
+                foreach (KeyValuePair<char, string> entry in mapLettersToBraille)
+                {
+                    if (entry.Value == input)
+                    {
+                        return entry.Key.ToString();
+                    }
+                }
             }
-            else if (dictionary["numbers_to_braille"].ContainsKey(input))
+            else if (mapNumberToBraille.ContainsValue(input))
             {
-                return dictionary["numbers_to_braille"][input];
+                // Iterate through the symbols dictionary to find the matching key
+                foreach (KeyValuePair<char, string> entry in mapNumberToBraille)
+                {
+                    if (entry.Value == input)
+                    {
+                        return entry.Key.ToString();
+                    }
+                }
             }
-            else if (dictionary["symbols_to_braille"].ContainsKey(input))
+            else if (mapSymbolsToBraille.ContainsValue(input))
             {
-                return dictionary["symbols_to_braille"][input];
+                // Iterate through the symbols dictionary to find the matching key
+                foreach (KeyValuePair<char, string> entry in mapSymbolsToBraille)
+                {
+                    if (entry.Value == input)
+                    {
+                        return entry.Key.ToString();
+                    }
+                }
             }
-            else if (dictionary["contractions_to_braille"].ContainsKey(input))
+            else if (mapContractionsToBraille.ContainsKey(input))
             {
-                return dictionary["contractions_to_braille"][input];
+                return mapContractionsToBraille[input];
             }
-            else
-            {
-                // If component is not present in any dictionary, return null
-                return null;
-            }
+            // If component is not present in any dictionary, return null
+            return null;
         }
 
         public string ReattachSymbolsAndPunctuation(string component, string translatedTrimmedComponent)
@@ -110,7 +163,7 @@ namespace SpaceBox_3D.BrailleConvertor
 
 
         //convert text to braille
-        public string TrasnlateToBraille(string input)
+        public string TranslateToBraille(string input)
         {
             // Split input into components based on white space and \n
             string[] components = SplitStringIntoComponents(input);

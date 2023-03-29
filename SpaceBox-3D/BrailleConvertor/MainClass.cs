@@ -9,14 +9,22 @@ namespace SpaceBox_3D.BrailleConvertor
     {
         static void Main(string[] args)
         {
-            string input = "Hello world!";
-            //create a instance of the ConvertTextToBraille class in the MainClass class file
-            ConvertTextToBraille obj = new ConvertTextToBraille();
-            //call SplitIntoComponents method
-            string output = obj.TrasnlateToBraille(input);
-            //output the method
-            Console.WriteLine(output);
-        }
+            Console.WriteLine("Enter the text you want to convert to Braille:");
+            string input = Console.ReadLine();
 
+            //create an instance of the ConvertTextToBraille class in the MainClass class file
+            ConvertTextToBraille obj = new ConvertTextToBraille();
+
+            //call TranslateToBraille method
+            string output = obj.TranslateToBraille(input);
+
+            //display the output to the user
+            Console.WriteLine("The Braille translation is:");
+            Console.WriteLine(output);
+
+            //wait for user input before closing the console window
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
     }
 }
