@@ -115,13 +115,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ShapeServiceReference\ShapeService.disco" />
-    <None Include="Connected Services\ShapeServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\ShapeServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\ShapeServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -131,7 +125,6 @@
     <Content Include="Content\styles.css" />
     <Content Include="Content\tailwind.css" />
     <Content Include="Default.aspx" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -153,6 +146,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="icon.png" />
     <Content Include="postcss.config.js" />
     <Content Include="Print.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -201,6 +195,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Braille.aspx.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Braille.aspx.designer.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
     <Compile Include="BrailleConvertor\MainClass.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
