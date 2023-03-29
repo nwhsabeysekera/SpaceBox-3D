@@ -107,7 +107,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.disco" />
     <None Include="Connected Services\BrailleServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BrailleServiceReference\configuration.svcinfo" />
@@ -115,7 +114,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -187,21 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Braille.aspx.cs">
-      <DependentUpon>Braille.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Braille.aspx.designer.cs">
-      <DependentUpon>Braille.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
     <Compile Include="BrailleConvertor\MainClass.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
