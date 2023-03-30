@@ -115,7 +115,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -139,10 +138,6 @@
     <Content Include="BrailleConvertor\MapBrailleToText.json" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.wsdl" />
     <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ShapeServiceReference\ShapeService.wsdl" />
-    <Content Include="Connected Services\ShapeServiceReference\SpaceBox_3D.ShapeServiceReference.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -205,11 +200,6 @@
     <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
     <Compile Include="BrailleConvertor\MainClass.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ShapeServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -287,7 +277,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\BrailleServiceReference\" />
-    <WCFMetadataStorage Include="Connected Services\ShapeServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
