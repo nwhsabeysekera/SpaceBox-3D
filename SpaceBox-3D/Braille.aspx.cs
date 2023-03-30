@@ -14,9 +14,17 @@ namespace SpaceBox_3D
 
         }
 
-        protected void btnConvert_Click(object sender, EventArgs e)
+        protected void btnClear_Click(object sender, EventArgs e)
         {
-
+            txtInput.Text = "";
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            lblDisplayDotAmount.Text = "";
+            txtInput.Text = "";
+            lblBraillePreview.Text = "";
+        }
+
     }
 }
