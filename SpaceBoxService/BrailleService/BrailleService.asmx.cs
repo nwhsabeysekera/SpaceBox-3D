@@ -18,10 +18,10 @@ namespace SpaceBoxService.BrailleService
     {
 
         [WebMethod]
-        public string hello(string input)
+        public string helloo(string input)
         {
             var service = new App_Code.BrailleService();
-            string output = service.TrasnlateToBraille(input);
+            string output = service.ConvertTextToBraille(input);
             return output;
         }
     }
