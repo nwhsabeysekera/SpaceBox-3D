@@ -134,8 +134,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="BrailleConvertor\MapTextToBraille.json" />
-    <Content Include="BrailleConvertor\MapBrailleToText.json" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.wsdl" />
     <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -194,8 +192,6 @@
     <Compile Include="Braille.aspx.designer.cs">
       <DependentUpon>Braille.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
-    <Compile Include="BrailleConvertor\MainClass.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
