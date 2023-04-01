@@ -7,7 +7,19 @@ namespace SpaceBoxService.BrailleService.App_Code
 {
     public class DotsCounter
     {
-        public static int GetDotsAmount(string input)
+        private DotsCounter() { }
+
+        private static readonly DotsCounter instance = new DotsCounter();
+
+        public static DotsCounter Instance 
+        { 
+            get 
+            {  
+                return instance; 
+            } 
+        }
+
+        public int GetDotsAmount(string input)
         {
             int DotAmount = 0;
 

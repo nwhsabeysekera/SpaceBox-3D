@@ -1,16 +1,25 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Web;
 
 namespace SpaceBoxService.BrailleService.App_Code
 {
-    public class BrailleService
+    public class BrailleTranslator
     {
+        private BrailleTranslator() { }
+
+        private static readonly BrailleTranslator instance = new BrailleTranslator();
+
+        public static BrailleTranslator Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
         private const string CAPITAL = "⠠";
         private const string NUMBER = "⠼";
         private const string UNRECOGNIZED = "⠿";

@@ -21,8 +21,8 @@ namespace SpaceBoxService.BrailleService
         [WebMethod]
         public string ConvertTextToBraille(string input)
         {
-            var service = new App_Code.BrailleService();
-            string output = service.ConvertTextToBraille(input);
+            BrailleTranslator translator = BrailleTranslator.Instance;
+            string output = translator.ConvertTextToBraille(input);
             return output;
         }
 
@@ -30,8 +30,8 @@ namespace SpaceBoxService.BrailleService
         public int GetDotsAmount(string input)
         {
             input = ConvertTextToBraille(input);
-            var DotsCounter = new DotsCounter();
-            var DotAmount = DotsCounter.GetDotsAmount(input);
+            DotsCounter dotsCounter = DotsCounter.Instance;
+            int DotAmount = dotsCounter.GetDotsAmount(input);
             return DotAmount;
         }
     }
