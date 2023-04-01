@@ -64,7 +64,7 @@
          <div Style="position: absolute; top: 554px; left: 470px;">
          <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="180px" Width="558px"> </asp:Panel>
             <div Style="position: absolute; top: 60px; left: 220px;">
-             <asp:Label ID="LabelPreview" runat="server" Text="" Font-Names="readex pro deca medium" Font-Size="18px" ForeColor="White" ></asp:Label>
+             <asp:Label ID="LabelPreview" runat="server" Text="Preview" Font-Names="readex pro deca medium" Font-Size="18px" ForeColor="White" ></asp:Label>
                 </div>
          </div>
          
@@ -75,6 +75,12 @@
          <div Style="position: absolute; top: 810px; left: 770px;">
         <asp:Button ID="btnCancel" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="55px" Text="Cancel" Width="120px" style="border-radius: 40px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="20px" OnClick="btnCancel_Click" />
         </div>
+
+        
+
+        
+
+        
 
     </form>
    </body>
