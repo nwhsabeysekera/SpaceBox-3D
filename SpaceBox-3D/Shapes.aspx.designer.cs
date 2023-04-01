@@ -78,6 +78,24 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Base;
 
         /// <summary>
+        /// CenterX control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CenterX;
+
+        /// <summary>
+        /// CenterY control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CenterY;
+
+        /// <summary>
         /// btnApply control.
         /// </summary>
         /// <remarks>

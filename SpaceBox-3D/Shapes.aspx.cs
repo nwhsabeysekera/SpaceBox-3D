@@ -97,8 +97,8 @@ namespace SpaceBox_3D
                 if (shape == "Circle")
                 {
                     parameters.Add("Radius", double.Parse(Radius.Text));
-                    //parameters.Add("CenterX", double.Parse(CenterX.Text));
-                    //parameters.Add("CenterY", double.Parse(CenterY.Text));
+                    parameters.Add("CenterX", double.Parse(CenterX.Text));
+                    parameters.Add("CenterY", double.Parse(CenterY.Text));
                 }
                 else if (shape == "Triangle")
                 {
@@ -161,8 +161,8 @@ namespace SpaceBox_3D
             Width.Visible = false;
             Radius.Visible = true;
             Base.Visible = false;
-            //CenterX.Visible = true;
-            //CenterY.Visible = true;
+            CenterX.Visible = true;
+            CenterY.Visible = true;
         }
         protected void Rectangle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -170,8 +170,8 @@ namespace SpaceBox_3D
             Width.Visible = true;
             Radius.Visible = false;
             Base.Visible = false;
-            //CenterX.Visible = false;
-            //CenterY.Visible = false;
+            CenterX.Visible = false;
+            CenterY.Visible = false;
         }
         protected void Triangle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -179,8 +179,8 @@ namespace SpaceBox_3D
             Width.Visible = false;
             Radius.Visible = false;
             Base.Visible = true;
-           // CenterX.Visible = false;
-            //CenterY.Visible = false;
+            CenterX.Visible = false;
+            CenterY.Visible = false;
         }
 
         protected void SelectShape_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,8 +200,8 @@ namespace SpaceBox_3D
                 Width.Visible = true;
                 Radius.Visible = false;
                 Base.Visible = false;
-                //CenterX.Visible = false;
-                //CenterY.Visible = false;
+                CenterX.Visible = false;
+                CenterY.Visible = false;
             }
             else if (selectedShape == "Circle")
             {
@@ -210,8 +210,8 @@ namespace SpaceBox_3D
                 Width.Visible = false;
                 Radius.Visible = true;
                 Base.Visible = false;
-                //CenterX.Visible = true;
-                //CenterY.Visible = true;
+                CenterX.Visible = true;
+                CenterY.Visible = true;
             }
             else if (selectedShape == "Triangle")
             {
@@ -220,28 +220,28 @@ namespace SpaceBox_3D
                 Width.Visible = false;
                 Radius.Visible = false;
                 Base.Visible = true;
-                //CenterX.Visible = false;
-                //CenterY.Visible = false;
+                CenterX.Visible = false;
+                CenterY.Visible = false;
 
             }
         }
 
-        /*protected void CenterX_TextChanged(object sender, EventArgs e)
+        protected void CenterX_TextChanged(object sender, EventArgs e)
         {
-             // Get the entered text
+            // Get the entered text
             string text = CenterX.Text;
 
             // Check if the text is not null and can be converted to a decimal
             if (!string.IsNullOrEmpty(text) && decimal.TryParse(text, out decimal result))
             {
                 // Update the centerY variable to the validated value
-                 CenterX.Text = result.ToString();
+                CenterX.Text = result.ToString();
             }
         }
 
         protected void CenterY_TextChanged(object sender, EventArgs e)
         {
-        // Get the entered text
+            // Get the entered text
             string text = CenterY.Text;
 
             // Check if the text is not null and can be converted to a decimal
@@ -250,9 +250,6 @@ namespace SpaceBox_3D
                 // Update the centerY variable to the validated value
                 CenterY.Text = result.ToString();
             }
-        }*/
+        }
     }
-
-
-
 }
