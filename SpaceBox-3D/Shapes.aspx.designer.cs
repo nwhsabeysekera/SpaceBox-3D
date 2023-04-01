@@ -78,15 +78,6 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Base;
 
         /// <summary>
-        /// CheckBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox;
-
-        /// <summary>
         /// btnApply control.
         /// </summary>
         /// <remarks>
@@ -105,13 +96,13 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// btnShowPreview control.
+        /// lblShowPreview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowPreview;
+        protected global::System.Web.UI.WebControls.Label lblShowPreview;
 
         /// <summary>
         /// PreveiwPanel control.
