@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="aead79aa-a582-4dfc-84d1-9f13d5208fe8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="84cb2953-0ec0-4690-86af-0d259ce19415" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:55866/BrailleService/BrailleService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:55866/BrailleService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BrailleService.disco" MetadataType="Disco" ID="73133aa4-2a58-4113-b649-0bcbd15c1dd3" SourceId="1" SourceUrl="http://localhost:55866/BrailleService/BrailleService.asmx?disco" />
-    <MetadataFile FileName="BrailleService.wsdl" MetadataType="Wsdl" ID="bd7c48d5-4250-4582-93a7-96a478ab230a" SourceId="1" SourceUrl="http://localhost:55866/BrailleService/BrailleService.asmx?wsdl" />
+    <MetadataFile FileName="BrailleService.disco" MetadataType="Disco" ID="eb1b01f3-3c08-4a70-9857-7d19dcbdbc92" SourceId="1" SourceUrl="http://localhost:55866/BrailleService.asmx?disco" />
+    <MetadataFile FileName="BrailleService.wsdl" MetadataType="Wsdl" ID="8649e702-3ef0-4231-a516-344385f5bcec" SourceId="1" SourceUrl="http://localhost:55866/BrailleService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

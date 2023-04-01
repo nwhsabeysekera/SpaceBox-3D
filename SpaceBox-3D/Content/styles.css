@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.0 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -395,6 +395,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   margin-left: auto;
   margin-right: auto;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -418,6 +424,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 .justify-center {
   justify-content: center;
+}
+.gap-2 {
+  gap: 0.5rem;
 }
 .gap-20 {
   gap: 5rem;

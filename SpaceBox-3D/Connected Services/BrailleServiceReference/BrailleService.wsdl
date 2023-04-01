@@ -2,38 +2,71 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="TrasnlateToBraille">
+      <s:element name="ConvertTextToBraille">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="TrasnlateToBrailleResponse">
+      <s:element name="ConvertTextToBrailleResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="TrasnlateToBrailleResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertTextToBrailleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDotsAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDotsAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDotsAmountResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="TrasnlateToBrailleSoapIn">
-    <wsdl:part name="parameters" element="tns:TrasnlateToBraille" />
+  <wsdl:message name="ConvertTextToBrailleSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertTextToBraille" />
   </wsdl:message>
-  <wsdl:message name="TrasnlateToBrailleSoapOut">
-    <wsdl:part name="parameters" element="tns:TrasnlateToBrailleResponse" />
+  <wsdl:message name="ConvertTextToBrailleSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertTextToBrailleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDotsAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDotsAmount" />
+  </wsdl:message>
+  <wsdl:message name="GetDotsAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDotsAmountResponse" />
   </wsdl:message>
   <wsdl:portType name="BrailleServiceSoap">
-    <wsdl:operation name="TrasnlateToBraille">
-      <wsdl:input message="tns:TrasnlateToBrailleSoapIn" />
-      <wsdl:output message="tns:TrasnlateToBrailleSoapOut" />
+    <wsdl:operation name="ConvertTextToBraille">
+      <wsdl:input message="tns:ConvertTextToBrailleSoapIn" />
+      <wsdl:output message="tns:ConvertTextToBrailleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDotsAmount">
+      <wsdl:input message="tns:GetDotsAmountSoapIn" />
+      <wsdl:output message="tns:GetDotsAmountSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BrailleServiceSoap" type="tns:BrailleServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="TrasnlateToBraille">
-      <soap:operation soapAction="http://tempuri.org/TrasnlateToBraille" style="document" />
+    <wsdl:operation name="ConvertTextToBraille">
+      <soap:operation soapAction="http://tempuri.org/ConvertTextToBraille" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDotsAmount">
+      <soap:operation soapAction="http://tempuri.org/GetDotsAmount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -44,8 +77,17 @@
   </wsdl:binding>
   <wsdl:binding name="BrailleServiceSoap12" type="tns:BrailleServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="TrasnlateToBraille">
-      <soap12:operation soapAction="http://tempuri.org/TrasnlateToBraille" style="document" />
+    <wsdl:operation name="ConvertTextToBraille">
+      <soap12:operation soapAction="http://tempuri.org/ConvertTextToBraille" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDotsAmount">
+      <soap12:operation soapAction="http://tempuri.org/GetDotsAmount" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -56,10 +98,10 @@
   </wsdl:binding>
   <wsdl:service name="BrailleService">
     <wsdl:port name="BrailleServiceSoap" binding="tns:BrailleServiceSoap">
-      <soap:address location="http://localhost:55866/BrailleService/BrailleService.asmx" />
+      <soap:address location="http://localhost:55866/BrailleService.asmx" />
     </wsdl:port>
     <wsdl:port name="BrailleServiceSoap12" binding="tns:BrailleServiceSoap12">
-      <soap12:address location="http://localhost:55866/BrailleService/BrailleService.asmx" />
+      <soap12:address location="http://localhost:55866/BrailleService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

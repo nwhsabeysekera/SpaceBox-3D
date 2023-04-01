@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Braille.aspx" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.disco" />
     <None Include="Connected Services\BrailleServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BrailleServiceReference\configuration.svcinfo" />
@@ -114,7 +115,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Braille.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -135,7 +135,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.wsdl" />
-    <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse.datasource">
+    <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ShapeServiceReference\ShapeService.wsdl" />

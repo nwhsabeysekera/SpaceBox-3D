@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpaceBoxService.BrailleService.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,11 +19,20 @@ namespace SpaceBoxService.BrailleService
     {
 
         [WebMethod]
-        public string helloo(string input)
+        public string ConvertTextToBraille(string input)
         {
-            var service = new App_Code.BrailleService();
-            string output = service.ConvertTextToBraille(input);
+            BrailleTranslator translator = BrailleTranslator.Instance;
+            string output = translator.ConvertTextToBraille(input);
             return output;
+        }
+
+        [WebMethod]
+        public int GetDotsAmount(string input)
+        {
+            input = ConvertTextToBraille(input);
+            DotsCounter dotsCounter = DotsCounter.Instance;
+            int DotAmount = dotsCounter.GetDotsAmount(input);
+            return DotAmount;
         }
     }
 }

@@ -16,26 +16,33 @@ namespace SpaceBox_3D.BrailleServiceReference {
     public interface BrailleServiceSoap {
         
         // CODEGEN: Generating message contract since element name input from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TrasnlateToBraille", ReplyAction="*")]
-        SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse TrasnlateToBraille(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertTextToBraille", ReplyAction="*")]
+        SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse ConvertTextToBraille(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/TrasnlateToBraille", ReplyAction="*")]
-        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse> TrasnlateToBrailleAsync(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConvertTextToBraille", ReplyAction="*")]
+        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse> ConvertTextToBrailleAsync(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest request);
+        
+        // CODEGEN: Generating message contract since element name input from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDotsAmount", ReplyAction="*")]
+        SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse GetDotsAmount(SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetDotsAmount", ReplyAction="*")]
+        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse> GetDotsAmountAsync(SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class TrasnlateToBrailleRequest {
+    public partial class ConvertTextToBrailleRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TrasnlateToBraille", Namespace="http://tempuri.org/", Order=0)]
-        public SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConvertTextToBraille", Namespace="http://tempuri.org/", Order=0)]
+        public SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequestBody Body;
         
-        public TrasnlateToBrailleRequest() {
+        public ConvertTextToBrailleRequest() {
         }
         
-        public TrasnlateToBrailleRequest(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequestBody Body) {
+        public ConvertTextToBrailleRequest(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -44,15 +51,15 @@ namespace SpaceBox_3D.BrailleServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class TrasnlateToBrailleRequestBody {
+    public partial class ConvertTextToBrailleRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public string input;
         
-        public TrasnlateToBrailleRequestBody() {
+        public ConvertTextToBrailleRequestBody() {
         }
         
-        public TrasnlateToBrailleRequestBody(string input) {
+        public ConvertTextToBrailleRequestBody(string input) {
             this.input = input;
         }
     }
@@ -61,15 +68,15 @@ namespace SpaceBox_3D.BrailleServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class TrasnlateToBrailleResponse {
+    public partial class ConvertTextToBrailleResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TrasnlateToBrailleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConvertTextToBrailleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponseBody Body;
         
-        public TrasnlateToBrailleResponse() {
+        public ConvertTextToBrailleResponse() {
         }
         
-        public TrasnlateToBrailleResponse(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponseBody Body) {
+        public ConvertTextToBrailleResponse(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -78,16 +85,84 @@ namespace SpaceBox_3D.BrailleServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class TrasnlateToBrailleResponseBody {
+    public partial class ConvertTextToBrailleResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string TrasnlateToBrailleResult;
+        public string ConvertTextToBrailleResult;
         
-        public TrasnlateToBrailleResponseBody() {
+        public ConvertTextToBrailleResponseBody() {
         }
         
-        public TrasnlateToBrailleResponseBody(string TrasnlateToBrailleResult) {
-            this.TrasnlateToBrailleResult = TrasnlateToBrailleResult;
+        public ConvertTextToBrailleResponseBody(string ConvertTextToBrailleResult) {
+            this.ConvertTextToBrailleResult = ConvertTextToBrailleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDotsAmountRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDotsAmount", Namespace="http://tempuri.org/", Order=0)]
+        public SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequestBody Body;
+        
+        public GetDotsAmountRequest() {
+        }
+        
+        public GetDotsAmountRequest(SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetDotsAmountRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string input;
+        
+        public GetDotsAmountRequestBody() {
+        }
+        
+        public GetDotsAmountRequestBody(string input) {
+            this.input = input;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetDotsAmountResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDotsAmountResponse", Namespace="http://tempuri.org/", Order=0)]
+        public SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponseBody Body;
+        
+        public GetDotsAmountResponse() {
+        }
+        
+        public GetDotsAmountResponse(SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetDotsAmountResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int GetDotsAmountResult;
+        
+        public GetDotsAmountResponseBody() {
+        }
+        
+        public GetDotsAmountResponseBody(int GetDotsAmountResult) {
+            this.GetDotsAmountResult = GetDotsAmountResult;
         }
     }
     
@@ -119,28 +194,53 @@ namespace SpaceBox_3D.BrailleServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.TrasnlateToBraille(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest request) {
-            return base.Channel.TrasnlateToBraille(request);
+        SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.ConvertTextToBraille(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest request) {
+            return base.Channel.ConvertTextToBraille(request);
         }
         
-        public string TrasnlateToBraille(string input) {
-            SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest inValue = new SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest();
-            inValue.Body = new SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequestBody();
+        public string ConvertTextToBraille(string input) {
+            SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest inValue = new SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest();
+            inValue.Body = new SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequestBody();
             inValue.Body.input = input;
-            SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse retVal = ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).TrasnlateToBraille(inValue);
-            return retVal.Body.TrasnlateToBrailleResult;
+            SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse retVal = ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).ConvertTextToBraille(inValue);
+            return retVal.Body.ConvertTextToBrailleResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse> SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.TrasnlateToBrailleAsync(SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest request) {
-            return base.Channel.TrasnlateToBrailleAsync(request);
+        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse> SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.ConvertTextToBrailleAsync(SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest request) {
+            return base.Channel.ConvertTextToBrailleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse> TrasnlateToBrailleAsync(string input) {
-            SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest inValue = new SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequest();
-            inValue.Body = new SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleRequestBody();
+        public System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleResponse> ConvertTextToBrailleAsync(string input) {
+            SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest inValue = new SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequest();
+            inValue.Body = new SpaceBox_3D.BrailleServiceReference.ConvertTextToBrailleRequestBody();
             inValue.Body.input = input;
-            return ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).TrasnlateToBrailleAsync(inValue);
+            return ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).ConvertTextToBrailleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.GetDotsAmount(SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest request) {
+            return base.Channel.GetDotsAmount(request);
+        }
+        
+        public int GetDotsAmount(string input) {
+            SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest inValue = new SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest();
+            inValue.Body = new SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequestBody();
+            inValue.Body.input = input;
+            SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse retVal = ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).GetDotsAmount(inValue);
+            return retVal.Body.GetDotsAmountResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse> SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap.GetDotsAmountAsync(SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest request) {
+            return base.Channel.GetDotsAmountAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SpaceBox_3D.BrailleServiceReference.GetDotsAmountResponse> GetDotsAmountAsync(string input) {
+            SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest inValue = new SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequest();
+            inValue.Body = new SpaceBox_3D.BrailleServiceReference.GetDotsAmountRequestBody();
+            inValue.Body.input = input;
+            return ((SpaceBox_3D.BrailleServiceReference.BrailleServiceSoap)(this)).GetDotsAmountAsync(inValue);
         }
     }
 }
