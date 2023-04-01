@@ -107,7 +107,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.disco" />
     <None Include="Connected Services\BrailleServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BrailleServiceReference\configuration.svcinfo" />
@@ -134,10 +133,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="BrailleConvertor\MapTextToBraille.json" />
-    <Content Include="BrailleConvertor\MapBrailleToText.json" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.wsdl" />
     <Content Include="Connected Services\BrailleServiceReference\SpaceBox_3D.BrailleServiceReference.TrasnlateToBrailleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ShapeServiceReference\ShapeService.wsdl" />
+    <Content Include="Connected Services\ShapeServiceReference\SpaceBox_3D.ShapeServiceReference.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -182,18 +183,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Braille.aspx.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Braille.aspx.designer.cs">
+      <DependentUpon>Braille.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BrailleConvertor\ConvertTextToBraille.cs" />
-    <Compile Include="BrailleConvertor\MainClass.cs" />
-    <Compile Include="BrailleConvertor\NewBrailleTranslator.cs" />
     <Compile Include="Connected Services\BrailleServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ShapeServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -271,6 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\BrailleServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ShapeServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
