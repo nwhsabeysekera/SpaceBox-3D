@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="ThFB2nj90ix4xURvFrUsLK8drO368DjsQQXULqpGavY=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="fYWPFq6PXicrAx3YkISOwpF0T/RQXSDhphKJzY7Fk2s=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BrailleServiceSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BrailleServiceSoap" contract="BrailleServiceReference.BrailleServiceSoap" bindingType="basicHttpBinding" address="http://localhost:55866/BrailleService/BrailleService.asmx" bindingConfiguration="BrailleServiceSoap">
+    <endpoint name="BrailleServiceSoap" contract="BrailleServiceReference.BrailleServiceSoap" bindingType="basicHttpBinding" address="http://localhost:55866/BrailleService.asmx" bindingConfiguration="BrailleServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:55866/BrailleService/BrailleService.asmx</serializedValue>
+          <serializedValue>http://localhost:55866/BrailleService.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
