@@ -16,13 +16,13 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ShapeServiceReference.ShapeServiceSoapClient client = new ShapeServiceReference.ShapeServiceSoapClient();
+            //ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
             if (!IsPostBack)
             {
                 // Populate dropdown list with supported shapes
 
-                //string[] supportedShapes = new ShapeService().GetSupportedShapes();
+                //string[] supportedShapes = new ShapesService().GetSupportedShapes();
 
                 /*foreach (string shape in supportedShapes)
                 {
@@ -118,10 +118,10 @@ namespace SpaceBox_3D
                 }
 
                 // Calculate required dots
-               // int requiredDots = new ShapeService().CalculateRequiredDots(shape, parameters);
+               // int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);
 
                 // Display result
-                LabelPreview.Text = "Required dots: " + requiredDots;
+                //LabelPreview.Text = "Required dots: " + requiredDots;
             }
             catch (Exception ex)
             {
