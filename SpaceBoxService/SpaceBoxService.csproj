@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BrailleService.asmx" />
+    <Content Include="ShapeService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +82,10 @@
     <Compile Include="BrailleService\App_Code\BrailleTranslator.cs" />
     <Compile Include="BrailleService\App_Code\DotsCounter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShapeService.asmx.cs">
+      <DependentUpon>ShapeService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
