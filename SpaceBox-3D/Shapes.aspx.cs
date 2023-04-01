@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+//using SpaceBoxService; //the service project name must included in here
 
 namespace SpaceBox_3D
 {
@@ -16,18 +16,12 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
             if (!IsPostBack)
             {
                 // Populate dropdown list with supported shapes
-
                 //string[] supportedShapes = new ShapesService().GetSupportedShapes();
-
-                /*foreach (string shape in supportedShapes)
-                {
-                    SelectShape.Items.Add(shape);
-                }*/
             }
 
             /*Length.Visible = true;
@@ -118,7 +112,7 @@ namespace SpaceBox_3D
                 }
 
                 // Calculate required dots
-               // int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);
+                //int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);
 
                 // Display result
                 //LabelPreview.Text = "Required dots: " + requiredDots;
