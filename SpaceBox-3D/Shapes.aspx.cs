@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using SpaceBoxService; //the service project name must included in here
+//using SpaceBoxService; //the service project name must included in here. but it is not connected to the project
 
 namespace SpaceBox_3D
 {
@@ -16,21 +16,19 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
-
             if (!IsPostBack)
             {
                 // Populate dropdown list with supported shapes
+                //This step must need to do
                 //string[] supportedShapes = new ShapesService().GetSupportedShapes();
             }
 
-            /*Length.Visible = true;
+            Length.Visible = true;
             Width.Visible = true;
             Radius.Visible = false;
             Base.Visible = false;
             CenterX.Visible = false;
-            CenterY.Visible = false;
-            */
+            CenterY.Visible = false;            
         }
 
         protected void Circle_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,6 +40,7 @@ namespace SpaceBox_3D
             CenterX.Visible = true;
             CenterY.Visible = true;
         }
+
         protected void Rectangle_SelectedIndexChanged(object sender, EventArgs e)
         {
             Length.Visible = true;
@@ -51,6 +50,7 @@ namespace SpaceBox_3D
             CenterX.Visible = false;
             CenterY.Visible = false;
         }
+
         protected void Triangle_SelectedIndexChanged(object sender, EventArgs e)
         {
             Length.Visible = true;
@@ -138,6 +138,7 @@ namespace SpaceBox_3D
                 Radius.Text = result.ToString();
             }
         }
+
         protected void Base_TextChanged(object sender, EventArgs e)
         {
             // Get the entered text
@@ -202,9 +203,11 @@ namespace SpaceBox_3D
                 }
 
                 // Calculate required dots
+                //This step must need to do
                 //int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);
 
                 // Display result
+                //This step must need to do
                 //LabelPreview.Text = "Required dots: " + requiredDots;
             }
             catch (Exception ex)
@@ -224,7 +227,6 @@ namespace SpaceBox_3D
             SelectShape.SelectedIndex = 0;
         }
     
-
         protected void btnPrint_Click(object sender, EventArgs e)
         {
             Response.Redirect("Print.aspx");
