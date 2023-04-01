@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpaceBoxService.BrailleService.App_Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,15 @@ namespace SpaceBoxService.BrailleService
             var service = new App_Code.BrailleService();
             string output = service.ConvertTextToBraille(input);
             return output;
+        }
+
+        [WebMethod]
+        public int GetDotsAmount(string input)
+        {
+            input = ConvertTextToBraille(input);
+            var DotsCounter = new DotsCounter();
+            var DotAmount = DotsCounter.GetDotsAmount(input);
+            return DotAmount;
         }
     }
 }
