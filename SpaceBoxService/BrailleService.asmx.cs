@@ -18,7 +18,7 @@ namespace SpaceBoxService.BrailleService
     {
 
         [WebMethod]
-        public string helloo(string input)
+        public string ConvertTextToBraille(string input)
         {
             var service = new App_Code.BrailleService();
             string output = service.ConvertTextToBraille(input);

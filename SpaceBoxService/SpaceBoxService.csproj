@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrailleService\App_Code\BrailleService.cs" />
-    <Compile Include="BrailleService\App_Code\DataAccess.cs" />
     <Compile Include="BrailleService.asmx.cs">
       <DependentUpon>BrailleService.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -88,7 +87,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BrailleService\App_Code\MapTextToBraille.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

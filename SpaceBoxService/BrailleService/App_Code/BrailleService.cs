@@ -44,15 +44,23 @@ namespace SpaceBoxService.BrailleService.App_Code
 
         private static Dictionary<string, string> mapContractionsToBraille = new Dictionary<string, string>()
         {
-            {"but", "⠯"}, {"can", "⠙"}, {"do", "⠥"}, {"every", "⠑⠗⠑⠛⠑"},
-            {"from", "⠋⠗⠁⠍"}, {"go", "⠛⠕"}, {"have", "⠓⠁⠧⠑"}, {"just", "⠚⠥⠎"},
-            {"knowledge", "⠅⠇⠕⠛⠊⠇⠇⠑⠗⠑"}, {"like", "⠇⠊⠅⠑"}, {"more", "⠍⠕⠗⠑"},
-            {"not", "⠝⠕⠞"}, {"people", "⠏⠑⠛⠇⠑"}, {"quite", "⠟⠗⠑⠞⠑"}, {"rather", "⠗⠁⠞⠑⠗"},
-            {"so", "⠎⠕"}, {"that", "⠞⠁⠞"}, {"us", "⠥⠎"}, {"very", "⠧⠑⠗⠽"},
-            {"it", "⠊⠞"}, {"you", "⠽⠕⠥"}, {"as", "⠁⠎"}, {"and", "⠁⠝⠙"},
-            {"for", "⠋⠕⠗"}, {"of", "⠕⠋"}, {"the", "⠞⠓⠑"}, {"with", "⠺⠊⠞"},
-            {"will", "⠺⠊⠇⠇"}, {"his", "⠓⠊⠎"}, {"in", "⠊⠝"}, {"was", "⠺⠁⠎"},
-            {"to", "⠞⠕"}
+            {"but", "⠃" }, {"can", "⠉" }, {"do", "⠙" }, {"every", "⠑" },
+            {"from", "⠋" }, {"go", "⠛" }, {"have", "⠓" }, {"just", "⠚" },
+            {"knowledge", "⠅" }, {"like", "⠇" }, {"more", "⠍" }, {"not", "⠝" },
+            {"people", "⠏" }, {"quite", "⠟" }, {"rather", "⠗" }, {"so", "⠎" },
+            {"that", "⠞" }, {"us", "⠥" }, {"very", "⠧" }, {"will", "⠺" },
+            {"it", "⠭" }, {"you", "⠽" }, {"as", "⠵" },
+
+            {"and", "⠯" }, {"for", "⠿"}, {"of", "⠷"}, {"the", "⠮"}, {"with", "⠾"},
+            {"child", "⠡" }, {"shall", "⠩"}, {"this", "⠹"}, {"which", "⠱"},
+            {"out", "⠳"}, {"still", "⠌"}, {"be", "⠆"}, {"enough", "⠢"},
+            {"were", "⠶"}, {"his", "⠦"}, {"in", "⠔"}, {"was", "⠴"},
+
+            {"day", "⠐⠙"}, {"ever", "⠐⠑"}, {"father", "⠐⠋"}, {"here", "⠐⠓"},
+            {"know", "⠐⠅" }, {"lord", "⠐⠇"}, {"mother", "⠐⠍"}, {"name", "⠐⠝"},
+            {"one", "⠐⠕" }, {"part", "⠐⠏"}, {"question", "⠐⠟"}, {"right", "⠐⠗"},
+            {"some", "⠐⠎" }, {"time", "⠐⠞"}, {"under", "⠐⠥"}, {"work", "⠐⠺"},
+            {"young", "⠐⠽"}
         };
 
         public static List<string> ExtractWords(string input)
