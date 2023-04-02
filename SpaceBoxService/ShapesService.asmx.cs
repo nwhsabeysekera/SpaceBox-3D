@@ -29,7 +29,7 @@ namespace SpaceBoxService.ShapesService
         public Dictionary<string, double> GetShapeParameters(string shape)
         {
             //Get the factory for the given shape
-            IShapeFactory factory = ShapeFactoryProvider.GetFactory(shape);
+            IShapeFactory factory = ShapeFactory.GetFactory(shape);
             return factory.Create().GetParameters();
         }
 
@@ -38,7 +38,7 @@ namespace SpaceBoxService.ShapesService
         public int CalculateRequiredDots(string shape, Dictionary<string, double> parameters)
         {
             //Get the factory for the given shape.
-            IShapeFactory factory = ShapeFactoryProvider.GetFactory(shape);
+            IShapeFactory factory = ShapeFactory.GetFactory(shape);
 
             //Create a new shape object from the factory.
             IShape shapeObj = factory.Create();
@@ -51,155 +51,12 @@ namespace SpaceBoxService.ShapesService
         }
     }
 
-    //Define an interface for a geometric shape
-    public interface IShape
-    {
-        //Returns a dictionary of parameter names and values for this shape
-        Dictionary<string, double> GetParameters();
-
-        //Sets the parameters of the shape using a dictionary of parameter names and values
-        void SetParameters(Dictionary<string, double> parameters);
-
-        //Calculates and returns the number of dots required to draw this shape
-        int CalculateRequiredDots();
-    }
 
     //Define an interface for a factory that creates shapes
     public interface IShapeFactory
     {
         // Creates a new instance of a shape
         IShape Create();
-    }
-
-    //Define a class for a circle shape that implements the IShape interface
-    public class Circle : IShape
-    {
-        private double Radius;
-        private double CenterX;
-        private double CenterY;
-        private double cellDiameter;
-
-        public Circle()
-        {
-            Radius = 0;
-            CenterX = 0;
-            CenterY = 0;
-            cellDiameter = 1.5;
-        }
-
-        //Returns a dictionary with the parameter name "Radius" and the current value of the radius
-        public Dictionary<string, double> GetParameters()
-        {
-            return new Dictionary<string, double> { { "Radius", Radius } };//{ "CenterX", CenterX }, { "CenterY", CenterY } };
-        }
-
-        //Sets the radius of the circle using the "Radius" key in the parameters dictionary
-        public void SetParameters(Dictionary<string, double> parameters)
-        {
-            if (!parameters.TryGetValue("Radius", out Radius))//|| !parameters.TryGetValue("CenterX", out CenterX) || !parameters.TryGetValue("CenterY", out CenterY))
-            {
-                throw new ArgumentException("Invalid parameters for Circle");
-            }
-        }
-
-        //Calculates and returns the number of dots required to draw the circle
-        public int CalculateRequiredDots()
-        {
-            return (int)Math.Ceiling((2 * Radius * Math.PI) / cellDiameter) * 6;
-            //return (int)Math.Round(Math.PI * Radius * Radius);
-            //return (int)Math.Round((Math.PI * Radius * Radius) + (2 * Math.PI * Radius * Math.Sqrt(Math.Pow(CenterX, 2) + Math.Pow(CenterY, 2))));
-
-        }
-    }
-
-    public class Triangle : IShape
-    {
-        private double Base;
-        private double Length;
-        private double cellDiameter;
-
-        public Triangle()
-        {
-            Base = 0;
-            Length = 0;
-            cellDiameter = 1.5;
-        }
-
-        public Dictionary<string, double> GetParameters()
-        {
-            return new Dictionary<string, double> { { "Base", Base }, { "Length", Length } };
-        }
-
-        public void SetParameters(Dictionary<string, double> parameters)
-        {
-            if (!parameters.TryGetValue("Base", out Base) || !parameters.TryGetValue("Length", out Length))
-            {
-                throw new ArgumentException("Invalid parameters for Triangle");
-            }
-        }
-
-        public int CalculateRequiredDots()
-        {
-            return (int)Math.Ceiling(Base * Length / 2 / Math.PI * Math.Pow(cellDiameter / 2, 2)) * 6;
-            // return (int)Math.Round(Base * Length / 2);
-        }
-    }
-
-    public class Rectangle : IShape
-    {
-        private double Width;
-        private double Length;
-        private double cellDiameter;
-
-        public Rectangle()
-        {
-            Width = 0;
-            Length = 0;
-            cellDiameter = 1.5;
-        }
-
-        public Dictionary<string, double> GetParameters()
-        {
-            return new Dictionary<string, double> { { "Width", Width }, { "Length", Length } };
-        }
-
-        public void SetParameters(Dictionary<string, double> parameters)
-        {
-            if (!parameters.TryGetValue("Width", out Width) || !parameters.TryGetValue("Length", out Length))
-            {
-                throw new ArgumentException("Invalid parameters for Rectangle");
-            }
-        }
-
-        public int CalculateRequiredDots()
-        {
-            return (int)Math.Ceiling(Length * Width / Math.PI * Math.Pow(cellDiameter / 2, 2)) * 6;
-            //return (int)Math.Round(Width * Length);
-        }
-    }
-
-    //This class provides a static method to get a factory for creating shapes.
-    public static class ShapeFactoryProvider
-    {
-        //Returns a factory that can create a shape object of the given type
-        public static IShapeFactory GetFactory(string shape)
-        {
-            switch (shape.ToLower())
-            {
-                //If the shape is a circle, return a CircleFactory object
-                case "circle":
-                    return new CircleFactory();
-                //If the shape is a triangle, return a TriangleFactory object
-                case "triangle":
-                    return new TriangleFactory();
-                //If the shape is a rectangle, return a RectangleFactory object
-                case "rectangle":
-                    return new RectangleFactory();
-                //If the shape is not recognized, throw an ArgumentException
-                default:
-                    throw new ArgumentException("Unsupported shape: " + shape);
-            }
-        }
     }
 
     // This class is an implementation of the IShapeFactory interface and is responsible for creating Rectangle objects.
