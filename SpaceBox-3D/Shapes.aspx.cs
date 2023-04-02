@@ -8,9 +8,8 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using SpaceBoxService; //ERROR Line////-----The service project name must be metioned in here to connect the ShapesService. 
-//////but it is not connected to the project.
-/////cosnsider about all the comment lines "This step must need to do here"
+using SpaceBox_3D.ShapesServiceReference; 
+
 
 namespace SpaceBox_3D
 {
@@ -18,7 +17,7 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+            /*ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
             if (!IsPostBack)
             {
                 // Populate dropdown list with supported shapes
@@ -223,6 +222,36 @@ namespace SpaceBox_3D
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
+            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+
+            // call the web method
+           /* ShapeParameters shapeParams = new ShapeParameters();
+
+            string selectedShape = SelectShape.SelectedValue;
+
+            // Get the values of the shape parameters from the textboxes
+            if (selectedShape == "Circle")
+            {
+                shapeParams.Radius = double.Parse(Radius.Text);
+            }
+            else if (selectedShape == "Rectangle")
+            {
+                shapeParams.Length = double.Parse(Length.Text);
+                shapeParams.Width = double.Parse(Width.Text);
+            }
+            else if (selectedShape == "Triangle")
+            {
+                shapeParams.SideALength = double.Parse(SideALength.Text);
+                shapeParams.SideBLength = double.Parse(SideBLength.Text);
+                shapeParams.SideCLength = double.Parse(SideCLength.Text);
+            }
+
+            //int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+
+            LabelPreview.Text = DotAmount.ToString();
+
+        }*/
+            /* 
             try
             {
                 // Get selected shape and parameters
@@ -247,7 +276,7 @@ namespace SpaceBox_3D
                 }
 
                 // Calculate required dots
-                ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+                
             //////This step must need to do
                 //int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);//-----ERROR LINE
 
@@ -258,7 +287,7 @@ namespace SpaceBox_3D
             catch (Exception ex)
             {
                 LabelPreview.Text = ex.Message;
-            }
+            }*/
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
