@@ -13,5 +13,15 @@ namespace SpaceBox_3D
         {
 
         }
+
+        protected void btnShapes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Shapes.aspx");
+        }
+
+        protected void btnBraille_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Braille.aspx");
+        }
     }
 }
