@@ -35,7 +35,7 @@ namespace SpaceBoxService.ShapesService.App_Code
 
             public int CalculateRequiredDots()
             {
-               return (int)Math.Round((SideALength + SideBLength + SideCLength )/ (Standard + Standard + Standard));
+               return (int)Math.Round((SideALength + SideBLength + SideCLength )/ Standard);
                //return (int)Math.Ceiling(Base * Length / 2 / Math.PI * Math.Pow(cellDiameter / 2, 2)) * 6;
                // return (int)Math.Round(Base * Length / 2);
         }

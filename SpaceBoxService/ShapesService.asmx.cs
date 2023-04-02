@@ -19,6 +19,19 @@ namespace SpaceBoxService.ShapesService
     public class ShapesService : System.Web.Services.WebService
     {
         [WebMethod]
+        public int CalculateDotAmount(string shape)
+        {
+            ShapeFactory shapeFactory = new ShapeFactory();
+
+            IShape selectedShape = shapeFactory.GetShape(shape);
+
+            int DotAmount = selectedShape.CalculateRequiredDots();
+
+            return DotAmount;
+        }
+
+
+/*        [WebMethod]
         public string[] GetSupportedShapes()
         {
             return new string[] { "Circle", "Triangle", "Rectangle" };
@@ -35,7 +48,7 @@ namespace SpaceBoxService.ShapesService
 
         //Calculates the number of dots required to draw a shape with the given parameters.
         [WebMethod]
-        public int CalculateRequiredDots(string shape, Dictionary<string, double> parameters)
+        public int CalculateDotAmount(string shape, Dictionary<string, double> parameters)
         {
             //Get the factory for the given shape.
             IShapeFactory factory = ShapeFactory.GetFactory(shape);
@@ -48,14 +61,14 @@ namespace SpaceBoxService.ShapesService
 
             //Calculate the required dots for the shape.
             return shapeObj.CalculateRequiredDots();
-        }
+        }*/
     }
 
 
 
 
 
-    //Define an interface for a factory that creates shapes
+/*    //Define an interface for a factory that creates shapes
     public interface IShapeFactory
     {
         // Creates a new instance of a shape
@@ -86,5 +99,5 @@ namespace SpaceBoxService.ShapesService
         {
             return new Circle();
         }
-    }
+    }*/
 }

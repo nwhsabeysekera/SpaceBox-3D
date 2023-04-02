@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="ShapesService.asmx.cs" Class="SpaceBoxService.ShapesService" %>
+<%@ WebService Language="C#" CodeBehind="ShapesService.asmx.cs" Class="SpaceBoxService.ShapesService.ShapesService" %>
