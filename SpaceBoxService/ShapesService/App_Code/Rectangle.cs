@@ -9,13 +9,13 @@ namespace SpaceBoxService.ShapesService.App_Code
     {
         private double Width;
         private double Length;
-        private double cellDiameter;
+        private double Standard;
 
         public Rectangle()
         {
             Width = 0;
             Length = 0;
-            cellDiameter = 1.5;
+            Standard = 2.5;
         }
 
         public Dictionary<string, double> GetParameters()
@@ -33,8 +33,8 @@ namespace SpaceBoxService.ShapesService.App_Code
 
         public int CalculateRequiredDots()
         {
-            return (int)Math.Ceiling(Length * Width / Math.PI * Math.Pow(cellDiameter / 2, 2)) * 6;
-            //return (int)Math.Round(Width * Length);
+            return (int)Math.Round(Width * Length/ 2 * Standard);
+            //return (int)Math.Ceiling(Length * Width / Math.PI * Math.Pow(cellDiameter / 2, 2)) * 6;
         }
     }
 }
