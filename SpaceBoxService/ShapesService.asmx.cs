@@ -1,11 +1,12 @@
-﻿using SpaceBoxService;
+﻿using SpaceBoxService.ShapesService.App_Code;
+using SpaceBoxService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-namespace SpaceBoxService
+namespace SpaceBoxService.ShapesService
 {
     /// <summary>
     /// Summary description for ShapesService

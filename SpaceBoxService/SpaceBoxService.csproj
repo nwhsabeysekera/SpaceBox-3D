@@ -86,6 +86,11 @@
       <DependentUpon>ShapesService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ShapesService\App_Code\Circle.cs" />
+    <Compile Include="ShapesService\App_Code\IShape.cs" />
+    <Compile Include="ShapesService\App_Code\Rectangle.cs" />
+    <Compile Include="ShapesService\App_Code\ShapeFactory.cs" />
+    <Compile Include="ShapesService\App_Code\Triangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
