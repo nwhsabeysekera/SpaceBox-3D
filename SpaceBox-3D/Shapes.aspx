@@ -44,8 +44,8 @@
              <asp:TextBox ID="Radius" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Radius || 0mm" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" OnTextChanged="Radius_TextChanged">Radius</asp:TextBox>
              </div>
 
-             <div Style="position: absolute; top: 66px; left: 300px;">
-            <asp:TextBox ID="Base" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White"  PlaceHolder="Base || 0mm"  style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder"  OnTextChanged="Base_TextChanged"  >Base</asp:TextBox>
+             <div Style="position: absolute; top: -3px; left: 300px;">
+            <asp:TextBox ID="SideALength" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Side A" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="SideALength_TextChanged">SideALength</asp:TextBox>
             </div>
 
             <div Style="position: absolute; top: 120px; left: 300px;">
@@ -55,6 +55,15 @@
             <div Style="position: absolute; top: 64px; left: 300px;">
             <asp:TextBox ID="CenterY" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Center Y" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="CenterY_TextChanged">CenterY</asp:TextBox>
             </div>
+
+             <div Style="position: absolute; top: 63px; left: 300px;">
+            <asp:TextBox ID="SideBLength" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Side B" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="SideBLength_TextChanged">SideBLength</asp:TextBox>
+             </div>
+
+             <div Style="position: absolute; top: 122px; left: 300px;">
+                 <asp:TextBox ID="SideCLength" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="250px" ForeColor="White" PlaceHolder="Side C" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" OnTextChanged="SideCLength_TextChanged">SideCLength</asp:TextBox>
+             </div>
+            
             </div>
 
         <div Style="position: absolute; top: 453px; left: 768px;">
@@ -87,7 +96,7 @@
     
         
    
-    
+   
     
         
    
@@ -95,7 +104,23 @@
     
         
    
+   
     
+        
+   
+    
+    
+        
+   
+   
+    
+        
+   
+    
+    
+        
+   
+   
     
     </form>
    </body>

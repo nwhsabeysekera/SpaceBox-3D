@@ -29,9 +29,11 @@ namespace SpaceBox_3D
             Length.Visible = true;
             Width.Visible = true;
             Radius.Visible = false;
-            Base.Visible = false;
+            SideALength.Visible = false;
+            SideBLength.Visible = false;
+            SideCLength.Visible = false;
             CenterX.Visible = false;
-            CenterY.Visible = false;  */          
+            CenterY.Visible = false;  */
         }
 
         protected void Circle_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,7 +41,9 @@ namespace SpaceBox_3D
             Length.Visible = false;
             Width.Visible = false;
             Radius.Visible = true;
-            Base.Visible = false;
+            SideALength.Visible = false;
+            SideBLength.Visible = false;
+            SideCLength.Visible = false;
             CenterX.Visible = true;
             CenterY.Visible = true;
         }
@@ -49,7 +53,9 @@ namespace SpaceBox_3D
             Length.Visible = true;
             Width.Visible = true;
             Radius.Visible = false;
-            Base.Visible = false;
+            SideALength.Visible = false;
+            SideBLength.Visible = false;
+            SideCLength.Visible = false;
             CenterX.Visible = false;
             CenterY.Visible = false;
         }
@@ -59,7 +65,9 @@ namespace SpaceBox_3D
             Length.Visible = true;
             Width.Visible = false;
             Radius.Visible = false;
-            Base.Visible = true;
+            SideALength.Visible = true;
+            SideBLength.Visible = true;
+            SideCLength.Visible = true;
             CenterX.Visible = false;
             CenterY.Visible = false;
         }
@@ -77,7 +85,9 @@ namespace SpaceBox_3D
                 Length.Visible = true;
                 Width.Visible = true;
                 Radius.Visible = false;
-                Base.Visible = false;
+                SideALength.Visible = false;
+                SideBLength.Visible = false;
+                SideCLength.Visible = false;
                 CenterX.Visible = false;
                 CenterY.Visible = false;
             }
@@ -87,7 +97,9 @@ namespace SpaceBox_3D
                 Length.Visible = false;
                 Width.Visible = false;
                 Radius.Visible = true;
-                Base.Visible = false;
+                SideALength.Visible = false;
+                SideBLength.Visible = false;
+                SideCLength.Visible = false;
                 CenterX.Visible = true;
                 CenterY.Visible = true;
             }
@@ -97,7 +109,9 @@ namespace SpaceBox_3D
                 Length.Visible = true;
                 Width.Visible = false;
                 Radius.Visible = false;
-                Base.Visible = true;
+                SideALength.Visible = true;
+                SideBLength.Visible = true;
+                SideCLength.Visible = true;
                 CenterX.Visible = false;
                 CenterY.Visible = false;
             }
@@ -142,19 +156,6 @@ namespace SpaceBox_3D
             }
         }
 
-        protected void Base_TextChanged(object sender, EventArgs e)
-        {
-            // Get the entered text
-            string text = Base.Text;
-
-            // Check if the text is not null and can be converted to a decimal
-            if (!string.IsNullOrEmpty(text) && decimal.TryParse(text, out decimal result))
-            {
-                // Update the textbox to show the validated value
-                Base.Text = result.ToString();
-            }
-        }
-
         protected void CenterX_TextChanged(object sender, EventArgs e)
         {
             // Get the entered text
@@ -181,6 +182,45 @@ namespace SpaceBox_3D
             }
         }
 
+        protected void SideCLength_TextChanged(object sender, EventArgs e)
+        {
+            // Get the entered text
+            string text = SideCLength.Text;
+
+            // Check if the text is not null and can be converted to a decimal
+            if (!string.IsNullOrEmpty(text) && decimal.TryParse(text, out decimal result))
+            {
+                // Update the textbox to show the validated value
+                SideCLength.Text = result.ToString();
+            }
+        }
+
+        protected void SideBLength_TextChanged(object sender, EventArgs e)
+        {
+            // Get the entered text
+            string text = SideBLength.Text;
+
+            // Check if the text is not null and can be converted to a decimal
+            if (!string.IsNullOrEmpty(text) && decimal.TryParse(text, out decimal result))
+            {
+                // Update the textbox to show the validated value
+                SideBLength.Text = result.ToString();
+            }
+        }
+
+        protected void SideALength_TextChanged(object sender, EventArgs e)
+        {
+            // Get the entered text
+            string text = SideALength.Text;
+
+            // Check if the text is not null and can be converted to a decimal
+            if (!string.IsNullOrEmpty(text) && decimal.TryParse(text, out decimal result))
+            {
+                // Update the textbox to show the validated value
+                SideALength.Text = result.ToString();
+            }
+        }
+
         protected void btnApply_Click(object sender, EventArgs e)
         {
             try
@@ -196,8 +236,9 @@ namespace SpaceBox_3D
                 }
                 else if (shape == "Triangle")
                 {
-                    parameters.Add("Base", double.Parse(Base.Text));
-                    parameters.Add("Length", double.Parse(Length.Text));
+                    parameters.Add("SideALength", double.Parse(SideALength.Text));
+                    parameters.Add("SideBLength", double.Parse(SideBLength.Text));
+                    parameters.Add("SideCLength", double.Parse(SideCLength.Text));
                 }
                 else if (shape == "Rectangle")
                 {
@@ -225,7 +266,9 @@ namespace SpaceBox_3D
             Length.Text = "";
             Width.Text = "";
             Radius.Text = "";
-            Base.Text = "";
+            SideALength.Text = "";
+            SideBLength.Text = "";
+            SideCLength.Text = "";
             CenterX.Text = "";
             CenterY.Text = "";
             SelectShape.SelectedIndex = 0;
