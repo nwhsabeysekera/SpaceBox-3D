@@ -225,7 +225,7 @@ namespace SpaceBox_3D
             ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
             // call the web method
-           /* ShapeParameters shapeParams = new ShapeParameters();
+            ShapeParameters shapeParams = new ShapeParameters();
 
             string selectedShape = SelectShape.SelectedValue;
 
@@ -241,16 +241,16 @@ namespace SpaceBox_3D
             }
             else if (selectedShape == "Triangle")
             {
-                shapeParams.SideALength = double.Parse(SideALength.Text);
-                shapeParams.SideBLength = double.Parse(SideBLength.Text);
-                shapeParams.SideCLength = double.Parse(SideCLength.Text);
+                shapeParams.SideA = double.Parse(SideALength.Text);
+                shapeParams.SideB = double.Parse(SideBLength.Text);
+                shapeParams.SideC = double.Parse(SideCLength.Text);
             }
 
-            //int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+            int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
 
             LabelPreview.Text = DotAmount.ToString();
 
-        }*/
+        }
             /* 
             try
             {
@@ -288,8 +288,7 @@ namespace SpaceBox_3D
             {
                 LabelPreview.Text = ex.Message;
             }*/
-        }
-
+        
         protected void btnClear_Click(object sender, EventArgs e)
         {
             Length.Text = "";
