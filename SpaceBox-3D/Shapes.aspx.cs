@@ -8,7 +8,9 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using SpaceBoxService; //the service project name must included in here. but it is not connected to the project
+////////////using SpaceBoxService; ////-----The service project name must be metioned in here to connect the ShapesService. 
+//////but it is not connected to the project.
+/////cosnsider about all the comment lines "This step must need to do here"
 
 namespace SpaceBox_3D
 {
@@ -16,10 +18,11 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
             if (!IsPostBack)
             {
                 // Populate dropdown list with supported shapes
-                //This step must need to do
+      /////////////This step must need to do
                 //string[] supportedShapes = new ShapesService().GetSupportedShapes();
             }
 
@@ -203,11 +206,12 @@ namespace SpaceBox_3D
                 }
 
                 // Calculate required dots
-                //This step must need to do
+                ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+            //////This step must need to do
                 //int requiredDots = new ShapesService().CalculateRequiredDots(shape, parameters);
 
                 // Display result
-                //This step must need to do
+             ///////This step must need to do
                 //LabelPreview.Text = "Required dots: " + requiredDots;
             }
             catch (Exception ex)
