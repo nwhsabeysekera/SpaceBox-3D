@@ -25,13 +25,13 @@ namespace SpaceBox_3D
       /////////////This step must need to do
                 //string[] supportedShapes = new ShapesService().GetSupportedShapes();
             }
-
+            /*
             Length.Visible = true;
             Width.Visible = true;
             Radius.Visible = false;
             Base.Visible = false;
             CenterX.Visible = false;
-            CenterY.Visible = false;            
+            CenterY.Visible = false;  */          
         }
 
         protected void Circle_SelectedIndexChanged(object sender, EventArgs e)
