@@ -7,6 +7,35 @@ namespace SpaceBoxService.ShapesService.App_Code
 {
     public class Circle : IShape
     {
+        private double radius;
+
+        public ShapeParameters GetParameters()
+        {
+            return new ShapeParameters { Radius = radius };
+        }
+
+        public void SetParameters(ShapeParameters parameters)
+        {
+            if (parameters.Radius <= 0)
+            {
+                throw new ArgumentException("Invalid radius for Circle");
+            }
+
+            radius = parameters.Radius;
+        }
+
+        public int CalculateRequiredDots()
+        {
+            //standard diameter of a braille dot (1.6mm) + standard space between two braille dots (2.5mm)
+            double standard = 4.1;
+            return (int)Math.Round(2 * radius * Math.PI / standard);
+        }
+    }
+
+
+
+    /*public class Circle : IShape
+    {
         private double Radius;
         private double CenterX;
         private double CenterY;
@@ -44,5 +73,5 @@ namespace SpaceBoxService.ShapesService.App_Code
             //return (int)Math.Round((Math.PI * Radius * Radius) + (2 * Math.PI * Radius * Math.Sqrt(Math.Pow(CenterX, 2) + Math.Pow(CenterY, 2))));
 
         }
-    }
+    }*/
 }
