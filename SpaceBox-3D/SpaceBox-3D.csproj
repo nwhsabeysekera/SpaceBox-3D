@@ -154,6 +154,7 @@
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="icon.png" />
+    <Content Include="Images\background.png" />
     <Content Include="postcss.config.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

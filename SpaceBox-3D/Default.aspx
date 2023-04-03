@@ -1,7 +1,23 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SpaceBox_3D._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main>
+    <main aria-labelledby="title">>
+
+        <style>
+            body::before {
+                content: "";
+                background-image: url('Images/background.png');
+                background-size: cover;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.5; /* Adjust the value to your desired opacity */
+                z-index: -1              
+            }
+        </style>
+
         
         <div class="flex flex-col justify-center items-center h-screen gap-20">
 
