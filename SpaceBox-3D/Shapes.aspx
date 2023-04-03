@@ -73,17 +73,18 @@
         <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="45px" Text="Clear" Width="100px" style="border-radius: 30px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnClear_Click" />
         </div>
 
-        <div Style="position: absolute; top: 520px; left: 470px;">
-             <asp:Label ID="LabelPreview" runat="server" Font-Names="readex pro deca medium" Font-Size="15px" ForeColor="White" >Dot Amount :</asp:Label>
-            
+         <div Style="position: absolute; top: 520px; left: 470px;">
+            <asp:Label ID="lblShowPreview" runat="server" BorderStyle="Solid" style="border-radius: 20px;" Font-Names="readex pro deca medium" Font-Size="15px" ForeColor="White" Height="25px" Text="Dot Amount:" Width="95px"></asp:Label>
         </div>
 
-         <div Style="position: absolute; top: 554px; left: 470px;">
-         <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="200px" Width="558px">
-             </asp:Panel>
-            <div Style="position: absolute; top: 60px; left: 220px;">
-                </div>
+
+          <div Style="position: absolute; top: 554px; left: 470px;">
+         <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="180px" Width="558px"> </asp:Panel>
+         <div Style="position: absolute; top: 60px; left: 220px;">
+         <asp:Label ID="LabelPreview" runat="server" Font-Names="readex pro deca medium" Font-Size="18px" ForeColor="White" ></asp:Label>
          </div>
+         </div>
+
          
         <div Style="position: absolute; top: 810px; left: 600px;">
         <asp:Button ID="btnPrint" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="55px" Text="Print" Width="120px" style="border-radius: 40px;" Font-Names="readex pro deca medium" Font-Size="20px" OnClick="btnPrint_Click" />

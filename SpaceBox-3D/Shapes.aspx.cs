@@ -249,7 +249,6 @@ namespace SpaceBox_3D
             int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
 
             LabelPreview.Text = DotAmount.ToString();
-
         }
             /* 
             try
