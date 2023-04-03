@@ -13,7 +13,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                opacity: 0.5; /* Adjust the value to your desired opacity */
+                opacity: 0.5;
                 z-index: -1              
             }
         </style>
