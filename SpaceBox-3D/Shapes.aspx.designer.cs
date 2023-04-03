@@ -69,15 +69,6 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Radius;
 
         /// <summary>
-        /// SideALength control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SideALength;
-
-        /// <summary>
         /// CenterX control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CenterY;
+
+        /// <summary>
+        /// SideALength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SideALength;
 
         /// <summary>
         /// SideBLength control.
