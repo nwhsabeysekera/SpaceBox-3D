@@ -22,9 +22,9 @@
             </div>
             </div>
 
-        <div class="flex justify-center items-center" Style="position: absolute; top: 250px; left: 470px;">
+        <div class="flex justify-center items-center" Style="position: absolute; top: 240px; left: 490px;">
          <div class="relative inline-block text-left">
-         <asp:DropDownList ID="SelectShape" runat="server"  BackColor="#3B3B3B"  ForeColor="#FFCB74" Height="50px" Width="200px" Font-Size="20px" style="border-radius: 5px;border:2px #E6A02D ;" OnSelectedIndexChanged="SelectShape_SelectedIndexChanged" AutoPostBack="True">
+         <asp:DropDownList ID="SelectShape" runat="server"  BackColor="#3B3B3B"  ForeColor="#FFCB74" Height="75px" Width="250px" Font-Size="20px" style="border-radius: 5px;border:2px #E6A02D ;" OnSelectedIndexChanged="SelectShape_SelectedIndexChanged" AutoPostBack="True">
             <asp:ListItem >Select Shape</asp:ListItem>
             <asp:ListItem OnSelectedIndexChanged="Circle_SelectedIndexChanged">Circle</asp:ListItem>
             <asp:ListItem>Rectangle</asp:ListItem>
@@ -66,21 +66,22 @@
             
             </div>
 
-        <div Style="position: absolute; top: 453px; left: 768px;">
+        <div Style="position: absolute; top: 453px; left: 800px;">
         <asp:Button ID="btnApply" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="45px" Text="Apply" Width="100px" style="border-radius: 30px;" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnApply_Click" />
         </div>
-        <div Style="position: absolute; top: 453px; left: 910px;">
+        <div Style="position: absolute; top: 453px; left: 940px;">
         <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="45px" Text="Clear" Width="100px" style="border-radius: 30px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnClear_Click" />
         </div>
 
         <div Style="position: absolute; top: 520px; left: 470px;">
-            <asp:Label ID="lblShowPreview" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" style="border-radius: 20px;" Font-Names="readex pro deca medium" Font-Size="15px" ForeColor="#FFCB74" Height="25px" Text="Show Preview" Width="95px"></asp:Label>
+             <asp:Label ID="LabelPreview" runat="server" Font-Names="readex pro deca medium" Font-Size="15px" ForeColor="White" >Dot Amount :</asp:Label>
+            
         </div>
 
          <div Style="position: absolute; top: 554px; left: 470px;">
-         <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="180px" Width="558px"> </asp:Panel>
+         <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="200px" Width="558px">
+             </asp:Panel>
             <div Style="position: absolute; top: 60px; left: 220px;">
-             <asp:Label ID="LabelPreview" runat="server" Font-Names="readex pro deca medium" Font-Size="18px" ForeColor="White" ></asp:Label>
                 </div>
          </div>
          

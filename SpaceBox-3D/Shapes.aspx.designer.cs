@@ -132,13 +132,13 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// lblShowPreview control.
+        /// LabelPreview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblShowPreview;
+        protected global::System.Web.UI.WebControls.Label LabelPreview;
 
         /// <summary>
         /// PreveiwPanel control.
@@ -148,15 +148,6 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PreveiwPanel;
-
-        /// <summary>
-        /// LabelPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPreview;
 
         /// <summary>
         /// btnPrint control.
