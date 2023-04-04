@@ -1,110 +1,147 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Shapes.aspx.cs" Inherits="SpaceBox_3D.Shapes" Theme="" %>
+﻿<%@ Page Title="Shapes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Shapes.aspx.cs" Inherits="SpaceBox_3D.Shapes" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link href="./Content/styles.css" rel="stylesheet" />
-    <link href="./Content/site.css" rel="stylesheet" />
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <title>Shapes</title>
-    <link rel="icon" href="/icon.png" type="image/x-icon"/>
-</head>
+    <main aria-labelledby="title">
 
-<body style="background-color: #2f2f2f";>
+        <asp:Label ID="Label1" runat="server" Text="SpaceBox 3D" Font-Names="Readex Pro Deca Medium" Font-Size="60pt" ForeColor="#E6A02D" CssClass="flex justify-center"></asp:Label>
 
-    <form id="form1" runat="server">
-        <div class="flex justify-center items-center h-screen">
-        <div class="container">
-            <asp:Label ID="Label1" runat="server"  Style="position: absolute; top: 40px; left: 515px;"  Font-Names="readex pro deca medium" Font-Size="60pt" class="Font-Bold" ForeColor="#E6A02D" Height="120px" Text="SpaceBox-3D" Width="606px" Font-Bold="True"></asp:Label>
-        </div>
-        </div>
+        <br />
+        <br />
 
-        <div class="flex justify-center items-center" Style="position: absolute; top: 240px; left: 470px;">
-          <div class="relative inline-block text-left">
-            <asp:DropDownList ID="SelectShape" runat="server"  BackColor="#3B3B3B"  ForeColor="#FFCB74" Height="75px" Width="250px" Font-Size="20px" style="border-radius: 5px;border:2px #E6A02D ;" OnSelectedIndexChanged="SelectShape_SelectedIndexChanged" AutoPostBack="True">
-                 <asp:ListItem>Select Shape</asp:ListItem>
-                 <asp:ListItem>Circle</asp:ListItem>
-                 <asp:ListItem>Rectangle</asp:ListItem>
-                 <asp:ListItem>Triangle</asp:ListItem>
-            </asp:DropDownList>
-         </div>
+        <div class="container mx-auto px-4" style="max-width: 900px;">
 
-            <!-- Rectangle -->
+            <div class="flex flex-col gap-5">
 
-             <div Style="position: absolute; top: -2px; left: 310px;">  
-               <asp:TextBox ID="Length" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White"  PlaceHolder="Length || 0mm"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" >Length</asp:TextBox>
-             </div>
+                <div class="flex justify-between gap-20">
+
+                    <p class="flex text-h1-color text-[80px] justify-center font-readex"> 
+                        <asp:DropDownList ID="SelectShape" runat="server" BackColor="#3B3B3B" DataTextField="Select a shape" ForeColor="White" Width="294px" CssClass="w-[100px] px-4 py-2 border-t-0 border-r-0 border-l-0 border-b-4 border-primary-yellow shadow-sm focus:outline-none focus:ring-primary-yellow mt-2" Height="45px" AutoPostBack="True" OnSelectedIndexChanged="SelectShape_SelectedIndexChanged">
+
+                            <asp:ListItem CssClass="hover:bg-secondary-grey">Circle</asp:ListItem>
+                            <asp:ListItem CssClass="hover:bg-secondary-grey">Triangle</asp:ListItem>
+                            <asp:ListItem CssClass="hover:bg-secondary-grey">Rectangle</asp:ListItem>
+                        </asp:DropDownList>
+                    </p>
+
+                    <div class="flex flex-col gap-4">
+
+                        <div class="flex flex-col gap-1">
+
+                            <!-- Rectangle -->
+
+                            <div class="flex flex-col gap-2 mb-5" id="rectangle" runat="server">
+                
+                                <asp:Label ID="lblLength" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Length"></asp:Label>
+
+                                <asp:TextBox ID="Length" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number"  PlaceHolder="Length || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
+
+                                <asp:Label ID="lblWidth" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Width" CssClass="mt-2"></asp:Label>
                
-              <div Style="position: absolute; top: 65px; left: 310px;">
-                <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Width || 0mm" Style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" AutoPostBack="True" >Width</asp:TextBox>
-              </div>
+                                <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Width || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
 
-            <!-- Circle -->
+                            </div>
 
-             <div Style="position: absolute; top: -1px; left: 310px;">
-               <asp:TextBox ID="Radius" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Radius || 0mm" Style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" AutoPostBack="True">Radius</asp:TextBox>
-             </div>
 
-             <div Style="position: absolute; top: 122px; left: 310px;">
-               <asp:TextBox ID="CenterX" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Center X"  style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder"  >CenterX</asp:TextBox>
-             </div>
+                            <!-- Circle -->
 
-             <div Style="position: absolute; top: 64px; left: 310px;">
-               <asp:TextBox ID="CenterY" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Center Y" style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" >CenterY</asp:TextBox>
-             </div>
+                            <div class="flex flex-col gap-2 mb-5" id="circle" runat="server">
+
+                                <asp:Label ID="lblRadius" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Radius"></asp:Label>
+
+                                <asp:TextBox ID="Radius" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Radius || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
+
+                                <asp:Label ID="lblCenterPoint" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Center Point"></asp:Label>
+
+                                <div class="flex flex-row max-w-[240px] justify-between gap-2">
+                                    
+                                    <asp:TextBox ID="CenterX" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="140px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="X axis" CssClass="txt-custom txt-custom:focus"></asp:TextBox>
+
+                                    <asp:TextBox ID="CenterY" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="140px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Y axis" CssClass="txt-custom txt-custom:focus"></asp:TextBox>
+
+                                </div>
+                                
+
+                            </div>
 
             
-            <!-- Triangle -->
+                            <!-- Triangle -->
 
-             <div Style="position: absolute; top: -3px; left: 310px;">
-               <asp:TextBox ID="SideALength" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Side A" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" >SideALength</asp:TextBox>
-             </div>          
+                            <div class="flex flex-col gap-2 mb-20" id="triangle" runat="server">
 
-             <div Style="position: absolute; top: 61px; left: 310px;">
-               <asp:TextBox ID="SideBLength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Side B" style="border-radius: 5px;" BorderColor="#3B3B3B" CssClass="placeholder" >SideBLength</asp:TextBox>
-             </div>
+                                <asp:Label ID="lblSide_a" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side A"></asp:Label>
 
-             <div Style="position: absolute; top: 123px; left: 310px;">
-               <asp:TextBox ID="SideCLength" runat="server" BackColor="#686868" Font-Names="readex pro deca medium" Font-Size="20px" Height="45px" TextMode="Number" Width="240px" ForeColor="White" PlaceHolder="Side C" style="border-radius: 5px;" BorderColor="#686868" CssClass="placeholder" >SideCLength</asp:TextBox>
-             </div>
+                                <asp:TextBox ID="SideALength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Width="294px" Height="40px" TextMode="Number" ForeColor="White" PlaceHolder="Side A | mm" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+                
+                                <asp:Label ID="lblSide_b" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side B" CssClass="mt-2"></asp:Label>
+
+                                <asp:TextBox ID="SideBLength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="40px" TextMode="Number" Width="294px" ForeColor="White" PlaceHolder="Side B || mm" BorderColor="#3B3B3B" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+
+                                <asp:Label ID="lblSide_c" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side C" CssClass="mt-2"></asp:Label>
+
+                                <asp:TextBox ID="SideCLength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="40px" TextMode="Number" Width="294px" ForeColor="White" PlaceHolder="Side C || mm" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+
+                                <asp:Label ID="lblAngles" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Angles" CssClass="mt-2"></asp:Label>
+
+                                <div class="flex flex-row max-w-[240px] justify-between gap-2">
+
+                                    <asp:Label ID="lblAngleA" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="A" CssClass="mt-2"></asp:Label>
+
+                                    <asp:TextBox ID="txtAngleA" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+
+                                    <asp:Label ID="lblAngleB" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="B" CssClass="mt-2"></asp:Label>
+
+                                    <asp:TextBox ID="txtAngleB" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+
+                                    <asp:Label ID="lblAngleC" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="C" CssClass="mt-2"></asp:Label>
+
+                                    <asp:TextBox ID="txtAngleC" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-row justify-center gap-20">
+                            <asp:Button ID="btnApply" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Text="Apply" CssClass="btn-custom" Height="40px" Width="120px" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnApply_Click" />
+
+                            <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Text="Clear" CssClass="btn-custom" Height="40px" Width="120px" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnClear_Click" />
+                        </div>
+
+                    </div>
+            
+                </div>
+
+                <div class="justify-center mt-2 mb-5">
+
+                    <div class="flex gap-2">
+                        <asp:Label ID="lblDotAmount" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Dot Amount :"></asp:Label>
+                        <asp:Label ID="lblDisplayDotAmount" runat="server" Font-Names="Readex Pro Deca" ForeColor="White" Font-Size="12"></asp:Label>
+                    </div>
+
+                    <div class="flex flex-row mt-2">
+                        <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="300px" Width="900px">
+                            <asp:Label ID="LabelPreview" runat="server" Font-Names="Readex Pro Deca" Font-Size="20pt" ForeColor="White" CssClass="mt-5 flex justify-center"></asp:Label>
+                        </asp:Panel>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-row gap-20 justify-center mb-5">
+
+                   <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#FFCB74" BorderColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="Readex Pro Deca" Font-Size="Medium" ForeColor="#2F2F2F" Height="40px" Width="120px" CssClass="btn-custom" />
+                         
+                  <asp:Button ID="btnCancel" runat="server" Text="Cancel" BackColor="#3B3B3B" BorderColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="Readex Pro Deca" Font-Size="Medium" ForeColor="#FFCB74" Height="40px" Width="120px" CssClass="btn-custom" OnClick="btnCancel_Click" />
+
+                </div>  
             
             </div>
-
-        <div Style="position: absolute; top: 453px; left: 780px;">
-          <asp:Button ID="btnApply" runat="server" BackColor="#FFCB74" BorderColor="#FFCB74" Height="45px" Text="Apply" Width="100px" style="border-radius: 30px;" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnApply_Click" />
+            
         </div>
+ 
+    </main>
 
-        <div Style="position: absolute; top: 453px; left: 920px;">
-          <asp:Button ID="btnClear" runat="server" BackColor="#3B3B3B" BorderColor="#FFCB74" Height="45px" Text="Clear" Width="100px" style="border-radius: 30px;" ForeColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="readex pro deca medium" Font-Size="15px" OnClick="btnClear_Click" />
-        </div>
-
-         <div Style="position: absolute; top: 525px; left: 470px;">
-            <asp:Label ID="lblShowPreview" runat="server" BorderStyle="Solid" style="border-radius: 20px;" Font-Names="readex pro deca medium" Font-Size="15px" ForeColor="White" Height="25px" Text="Dot Amount:" Width="95px"></asp:Label>
-        </div>
-
-
-         <div Style="position: absolute; top: 559px; left: 470px;">
-           <asp:Panel ID="PreveiwPanel" runat="server" BackColor="#3B3B3B" Height="180px" Width="558px"> </asp:Panel>
-             <div Style="position: absolute; top: 60px; left: 220px;">
-               <asp:Label ID="LabelPreview" runat="server" Font-Names="readex pro deca medium" Font-Size="18px" ForeColor="White" ></asp:Label>
-             </div>
-        </div>
-
-         
-        <div Style="position: absolute; top: 810px; left: 600px;">
-           <asp:Button ID="btnPrint" runat="server" Text="Print" BackColor="#FFCB74" BorderColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="Readex Pro Deca" Font-Size="Medium" ForeColor="#2F2F2F" Height="40px" Width="120px" style="border-radius: 30px;" />
-        </div>
-                         
-        <div Style="position: absolute; top: 810px; left: 790px;">
-          <asp:Button ID="btnCancel" runat="server" Text="Cancel" BackColor="#3B3B3B" BorderColor="#FFCB74" BorderStyle="Solid" BorderWidth="1px" Font-Names="Readex Pro Deca" Font-Size="Medium" ForeColor="#FFCB74" Height="40px" Width="120px" style="border-radius: 30px;" OnClick="btnCancel_Click" />
-        </div>  
+</asp:Content>
     
-    </form>
-   </body>
-</html>
 

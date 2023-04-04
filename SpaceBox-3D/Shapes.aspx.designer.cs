@@ -15,15 +15,6 @@ namespace SpaceBox_3D
     {
 
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -42,6 +33,24 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.DropDownList SelectShape;
 
         /// <summary>
+        /// rectangle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rectangle;
+
+        /// <summary>
+        /// lblLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLength;
+
+        /// <summary>
         /// Length control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Length;
+
+        /// <summary>
+        /// lblWidth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWidth;
 
         /// <summary>
         /// Width control.
@@ -60,6 +78,24 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Width;
 
         /// <summary>
+        /// circle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl circle;
+
+        /// <summary>
+        /// lblRadius control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRadius;
+
+        /// <summary>
         /// Radius control.
         /// </summary>
         /// <remarks>
@@ -67,6 +103,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Radius;
+
+        /// <summary>
+        /// lblCenterPoint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCenterPoint;
 
         /// <summary>
         /// CenterX control.
@@ -87,6 +132,24 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox CenterY;
 
         /// <summary>
+        /// triangle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl triangle;
+
+        /// <summary>
+        /// lblSide_a control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSide_a;
+
+        /// <summary>
         /// SideALength control.
         /// </summary>
         /// <remarks>
@@ -94,6 +157,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SideALength;
+
+        /// <summary>
+        /// lblSide_b control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSide_b;
 
         /// <summary>
         /// SideBLength control.
@@ -105,6 +177,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox SideBLength;
 
         /// <summary>
+        /// lblSide_c control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSide_c;
+
+        /// <summary>
         /// SideCLength control.
         /// </summary>
         /// <remarks>
@@ -112,6 +193,69 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SideCLength;
+
+        /// <summary>
+        /// lblAngles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAngles;
+
+        /// <summary>
+        /// lblAngleA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAngleA;
+
+        /// <summary>
+        /// txtAngleA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAngleA;
+
+        /// <summary>
+        /// lblAngleB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAngleB;
+
+        /// <summary>
+        /// txtAngleB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAngleB;
+
+        /// <summary>
+        /// lblAngleC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAngleC;
+
+        /// <summary>
+        /// txtAngleC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAngleC;
 
         /// <summary>
         /// btnApply control.
@@ -132,13 +276,22 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.Button btnClear;
 
         /// <summary>
-        /// lblShowPreview control.
+        /// lblDotAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblShowPreview;
+        protected global::System.Web.UI.WebControls.Label lblDotAmount;
+
+        /// <summary>
+        /// lblDisplayDotAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDisplayDotAmount;
 
         /// <summary>
         /// PreveiwPanel control.

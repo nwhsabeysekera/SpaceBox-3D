@@ -17,7 +17,9 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            rectangle.Visible = false;
+            circle.Visible = true;
+            triangle.Visible = false;
         }
 
         protected void SelectShape_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,39 +31,23 @@ namespace SpaceBox_3D
             if (selectedShape == "Rectangle")
             {
                 // Show input fields for length and width
-
-                Length.Visible = true;
-                Width.Visible = true;
-                Radius.Visible = false;
-                SideALength.Visible = false;
-                SideBLength.Visible = false;
-                SideCLength.Visible = false;
-                CenterX.Visible = false;
-                CenterY.Visible = false;
+                rectangle.Visible = true;
+                circle.Visible = false;
+                triangle.Visible = false;
             }
             else if (selectedShape == "Circle")
             {
                 // Show input field for radius
-                Length.Visible = false;
-                Width.Visible = false;
-                Radius.Visible = true;
-                SideALength.Visible = false;
-                SideBLength.Visible = false;
-                SideCLength.Visible = false;
-                CenterX.Visible = true;
-                CenterY.Visible = true;
+                rectangle.Visible = false;
+                circle.Visible = true;
+                triangle.Visible = false;
             }
             else if (selectedShape == "Triangle")
             {
                 // Show input fields for base and height
-                Length.Visible = true;
-                Width.Visible = false;
-                Radius.Visible = false;
-                SideALength.Visible = true;
-                SideBLength.Visible = true;
-                SideCLength.Visible = true;
-                CenterX.Visible = false;
-                CenterY.Visible = false;
+                rectangle.Visible = false;
+                circle.Visible = false;
+                triangle.Visible = true;
             }
         }
 
