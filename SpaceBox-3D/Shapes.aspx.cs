@@ -84,12 +84,19 @@ namespace SpaceBox_3D
         {
             Length.Text = "";
             Width.Text = "";
+
             Radius.Text = "";
+            CenterX.Text = "";
+            CenterY.Text = "";
+
             SideALength.Text = "";
             SideBLength.Text = "";
             SideCLength.Text = "";
-            CenterX.Text = "";
-            CenterY.Text = "";
+
+            txtAngleA.Text = "";
+            txtAngleB.Text = "";
+            txtAngleC.Text = "";
+            
             SelectShape.SelectedIndex = 0;
         }
 
