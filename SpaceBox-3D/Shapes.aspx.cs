@@ -109,44 +109,6 @@ namespace SpaceBox_3D
             SelectShape.SelectedIndex = 0;
         }
 
-        protected void Length_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void Width_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void Radius_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void CenterX_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void CenterY_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void SideCLength_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void SideBLength_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void SideALength_TextChanged(object sender, EventArgs e)
-        {
-        }
-    
-        protected void btnPrint_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Print.aspx");
-
-        }
-
         protected void btnCancel_Click(object sender, EventArgs e)
         {
           
