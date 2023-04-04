@@ -17,39 +17,37 @@ namespace SpaceBox_3D
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            rectangle.Visible = false;
-            circle.Visible = true;
-            triangle.Visible = false;
+            UpdateShapeVisibility();
+        }
+
+        private void UpdateShapeVisibility()
+        {
+            if (SelectShape.SelectedValue == "Circle")
+            {
+                circle.Visible = true;
+                rectangle.Visible = false;
+                triangle.Visible = false;
+            }
+
+            if (SelectShape.SelectedValue == "Rectangle")
+            {
+                circle.Visible = false;
+                rectangle.Visible = true;
+                triangle.Visible = false;
+            }
+
+            if (SelectShape.SelectedValue == "Triangle")
+            {
+                circle.Visible = false;
+                rectangle.Visible = false;
+                triangle.Visible = true;
+            }
         }
 
         protected void SelectShape_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Get the selected shape from the dropdown list
-            string selectedShape = SelectShape.SelectedValue;
-
-            // Load the parameters for the selected shape
-            if (selectedShape == "Rectangle")
-            {
-                // Show input fields for length and width
-                rectangle.Visible = true;
-                circle.Visible = false;
-                triangle.Visible = false;
-            }
-            else if (selectedShape == "Circle")
-            {
-                // Show input field for radius
-                rectangle.Visible = false;
-                circle.Visible = true;
-                triangle.Visible = false;
-            }
-            else if (selectedShape == "Triangle")
-            {
-                // Show input fields for base and height
-                rectangle.Visible = false;
-                circle.Visible = false;
-                triangle.Visible = true;
-            }
-        }
+            UpdateShapeVisibility();
+        }      
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
@@ -79,7 +77,7 @@ namespace SpaceBox_3D
 
             int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
 
-            LabelPreview.Text = DotAmount.ToString();
+            lblDisplayDotAmount.Text = DotAmount.ToString();
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
