@@ -51,6 +51,33 @@ namespace SpaceBox_3D
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
+            // Validate inputs before calling the web service
+            if (SelectShape.SelectedValue == "Circle")
+            {
+                if (!double.TryParse(Radius.Text, out double radius) || radius <= 0)
+                {
+                    lblDisplayDotAmount.Text = "Please enter a valid positive radius.";
+                    return;
+                }
+            }
+            else if (SelectShape.SelectedValue == "Rectangle")
+            {
+                if (!double.TryParse(Length.Text, out double length) || length <= 0 || !double.TryParse(Width.Text, out double width) || width <= 0)
+                {
+                    lblDisplayDotAmount.Text = "Please enter valid positive length and width.";
+                    return;
+                }
+            }
+            else if (SelectShape.SelectedValue == "Triangle")
+            {
+                if (!double.TryParse(SideALength.Text, out double sideA) || sideA <= 0 || !double.TryParse(SideBLength.Text, out double sideB) || sideB <= 0 || !double.TryParse(SideCLength.Text, out double sideC) || sideC <= 0)
+                {
+                    lblDisplayDotAmount.Text = "Please enter valid positive side lengths.";
+                    return;
+                }
+            }
+
+
             ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
             // call the web method
