@@ -131,15 +131,21 @@ namespace SpaceBox_3D
         protected void btnClear_Click(object sender, EventArgs e)
         {
             Length.Text = "";
+            lblLengthValidate.Text = "";
             Width.Text = "";
+            lblWidthValidate.Text = "";
 
             Radius.Text = "";
+            lblRadiusValidate.Text = "";
             CenterX.Text = "";
             CenterY.Text = "";
 
             SideALength.Text = "";
+            lblSideALengthValidate.Text = "";
             SideBLength.Text = "";
+            lblSideBLengthValidate.Text = "";
             SideCLength.Text = "";
+            lblSideCLengthValidate.Text = "";
 
             txtAngleA.Text = "";
             txtAngleB.Text = "";
