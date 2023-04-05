@@ -47,7 +47,7 @@ namespace SpaceBox_3D
         protected void SelectShape_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateShapeVisibility();
-        }      
+        }
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
@@ -56,28 +56,49 @@ namespace SpaceBox_3D
             {
                 if (!double.TryParse(Radius.Text, out double radius) || radius <= 0)
                 {
-                    lblDisplayDotAmount.Text = "Please enter a valid positive radius.";
+                    lblRadiusValidate.Text = "Please enter a valid radius.";
                     return;
                 }
             }
+
             else if (SelectShape.SelectedValue == "Rectangle")
             {
-                if (!double.TryParse(Length.Text, out double length) || length <= 0 || !double.TryParse(Width.Text, out double width) || width <= 0)
+                if (!double.TryParse(Length.Text, out double length) || length <= 0)
                 {
-                    lblDisplayDotAmount.Text = "Please enter valid positive length and width.";
+                    lblLengthValidate.Text = "Please enter valid length.";
+                    return;
+                }
+                else if
+                    (!double.TryParse(Width.Text, out double width) || width <= 0)
+                {
+                    lblWidthValidate.Text = "Please enter valid width.";
                     return;
                 }
             }
+
+
             else if (SelectShape.SelectedValue == "Triangle")
             {
-                if (!double.TryParse(SideALength.Text, out double sideA) || sideA <= 0 || !double.TryParse(SideBLength.Text, out double sideB) || sideB <= 0 || !double.TryParse(SideCLength.Text, out double sideC) || sideC <= 0)
+                if (!double.TryParse(SideALength.Text, out double sideA) || sideA <= 0)
                 {
-                    lblDisplayDotAmount.Text = "Please enter valid positive side lengths.";
+                    lblSideALengthValidate.Text = "Please enter valid length.";
                     return;
                 }
+                else if
+                    (!double.TryParse(SideBLength.Text, out double sideB) || sideB <= 0)
+                {
+                    lblSideBLengthValidate.Text = "Please enter valid length.";
+                    return;
+                }
+
+                else if
+                    (!double.TryParse(SideCLength.Text, out double sideC) || sideC <= 0)
+                {
+                    lblSideCLengthValidate.Text = "Please enter valid length.";
+                    return;
+                }                  
             }
-
-
+            
             ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
             // call the web method
@@ -128,8 +149,7 @@ namespace SpaceBox_3D
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
-        {
-          
+        {         
             Response.Redirect(Request.RawUrl);
         }
 

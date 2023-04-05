@@ -60,6 +60,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox Length;
 
         /// <summary>
+        /// lblLengthValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLengthValidate;
+
+        /// <summary>
         /// lblWidth control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Width;
+
+        /// <summary>
+        /// lblWidthValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWidthValidate;
 
         /// <summary>
         /// circle control.
@@ -103,6 +121,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Radius;
+
+        /// <summary>
+        /// lblRadiusValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRadiusValidate;
 
         /// <summary>
         /// lblCenterPoint control.
@@ -159,6 +186,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox SideALength;
 
         /// <summary>
+        /// lblSideALengthValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSideALengthValidate;
+
+        /// <summary>
         /// lblSide_b control.
         /// </summary>
         /// <remarks>
@@ -177,6 +213,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox SideBLength;
 
         /// <summary>
+        /// lblSideBLengthValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSideBLengthValidate;
+
+        /// <summary>
         /// lblSide_c control.
         /// </summary>
         /// <remarks>
@@ -193,6 +238,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SideCLength;
+
+        /// <summary>
+        /// lblSideCLengthValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSideCLengthValidate;
 
         /// <summary>
         /// lblAngles control.
