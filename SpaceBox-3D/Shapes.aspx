@@ -65,7 +65,6 @@
                                     <asp:TextBox ID="CenterX" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="140px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="X axis" CssClass="txt-custom txt-custom:focus"></asp:TextBox>
 
                                     <asp:TextBox ID="CenterY" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="140px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Y axis" CssClass="txt-custom txt-custom:focus"></asp:TextBox>         
-
                                    
                                </div>                             
 
