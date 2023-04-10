@@ -388,6 +388,33 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
+.inset-0 {
+  inset: 0px;
+}
+.right-0 {
+  right: 0px;
+}
+.top-0 {
+  top: 0px;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-20 {
+  z-index: 20;
+}
+.z-30 {
+  z-index: 30;
+}
+.z-0 {
+  z-index: 0;
+}
+.m-20 {
+  margin: 5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -400,9 +427,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 .mt-5 {
   margin-top: 1.25rem;
-}
-.mb-20 {
-  margin-bottom: 5rem;
 }
 .flex {
   display: flex;
@@ -418,6 +442,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 .items-center {
   align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -482,6 +509,18 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pl-32 {
+  padding-left: 8rem;
+}
+.pt-0 {
+  padding-top: 0px;
+}
 .font-readex {
   font-family: Readex Pro, sans-serif;
 }
@@ -511,6 +550,13 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 .btn-custom {
     border-radius: 30px;
+}
+
+.paragraph-custom {
+    font-family: 'Readex Pro';
+    font-size: 24px;
+    color: #686868;
+    width: 340px;
 }
 
 .hover\:bg-secondary-grey:hover {

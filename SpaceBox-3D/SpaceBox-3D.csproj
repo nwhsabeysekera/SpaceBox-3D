@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
     <Content Include="Braille.aspx" />
     <None Include="Connected Services\BrailleServiceReference\BrailleService.disco" />
     <None Include="Connected Services\BrailleServiceReference\configuration91.svcinfo" />
@@ -154,6 +155,8 @@
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="icon.png" />
+    <Content Include="Images\404-background.png" />
+    <Content Include="Images\404.png" />
     <Content Include="Images\background.png" />
     <Content Include="postcss.config.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -193,6 +196,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Braille.aspx.cs">
