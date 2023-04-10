@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-maincolor">
+<body class="bg-maincolor p-20">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>

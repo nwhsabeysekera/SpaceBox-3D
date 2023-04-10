@@ -102,15 +102,15 @@
 
                                     <asp:Label ID="lblAngleA" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="A" CssClass="mt-2"></asp:Label>
 
-                                    <asp:TextBox ID="txtAngleA" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+                                    <asp:TextBox ID="txtAngleA" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" OnTextChanged="txtAngleA_TextChanged" ></asp:TextBox>
 
                                     <asp:Label ID="lblAngleB" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="B" CssClass="mt-2"></asp:Label>
 
-                                    <asp:TextBox ID="txtAngleB" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+                                    <asp:TextBox ID="txtAngleB" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" OnTextChanged="txtAngleB_TextChanged" ></asp:TextBox>
 
                                     <asp:Label ID="lblAngleC" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="C" CssClass="mt-2"></asp:Label>
 
-                                    <asp:TextBox ID="txtAngleC" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
+                                    <asp:TextBox ID="txtAngleC" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ReadOnly="true"></asp:TextBox>
 
                                 </div>
 
