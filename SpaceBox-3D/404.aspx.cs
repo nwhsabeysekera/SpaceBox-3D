@@ -16,7 +16,7 @@ namespace SpaceBox_3D
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

@@ -157,33 +157,41 @@ namespace SpaceBox_3D
 
             if (ValidateInputs())
             {
-                ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
-
-                // call the web method
-                ShapeParameters shapeParams = new ShapeParameters();
-
-                string selectedShape = SelectShape.SelectedValue;
-
-                // Get the values of the shape parameters from the textboxes
-                if (selectedShape == "Circle")
+                try
                 {
-                    shapeParams.Radius = double.Parse(Radius.Text);
-                }
-                else if (selectedShape == "Rectangle")
-                {
-                    shapeParams.Length = double.Parse(Length.Text);
-                    shapeParams.Width = double.Parse(Width.Text);
-                }
-                else if (selectedShape == "Triangle")
-                {
-                    shapeParams.SideA = double.Parse(SideALength.Text);
-                    shapeParams.SideB = double.Parse(SideBLength.Text);
-                    shapeParams.SideC = double.Parse(SideCLength.Text);
-                }
+                    ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
-                int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+                    // call the web method
+                    ShapeParameters shapeParams = new ShapeParameters();
 
-                lblDisplayDotAmount.Text = DotAmount.ToString();
+                    string selectedShape = SelectShape.SelectedValue;
+
+                    // Get the values of the shape parameters from the textboxes
+                    if (selectedShape == "Circle")
+                    {
+                        shapeParams.Radius = double.Parse(Radius.Text);
+                    }
+                    else if (selectedShape == "Rectangle")
+                    {
+                        shapeParams.Length = double.Parse(Length.Text);
+                        shapeParams.Width = double.Parse(Width.Text);
+                    }
+                    else if (selectedShape == "Triangle")
+                    {
+                        shapeParams.SideA = double.Parse(SideALength.Text);
+                        shapeParams.SideB = double.Parse(SideBLength.Text);
+                        shapeParams.SideC = double.Parse(SideCLength.Text);
+                    }
+
+                    int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+
+                    lblDisplayDotAmount.Text = DotAmount.ToString();
+                }
+                catch (System.ServiceModel.EndpointNotFoundException ex)
+                {
+                    // redirect to custom error page for 404
+                    Response.Redirect("~/404.aspx");
+                }
             }
         }
 

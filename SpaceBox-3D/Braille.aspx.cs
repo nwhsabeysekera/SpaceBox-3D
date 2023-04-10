@@ -28,12 +28,19 @@ namespace SpaceBox_3D
 
         protected void btnConvert_Click(object sender, EventArgs e)
         {
-            BrailleServiceReference.BrailleServiceSoapClient client = new BrailleServiceReference.BrailleServiceSoapClient();
-            string output = client.ConvertTextToBraille(txtInput.Text);
-            int dotAmount = client.GetDotsAmount(txtInput.Text);
+            try
+            {
+                BrailleServiceReference.BrailleServiceSoapClient client = new BrailleServiceReference.BrailleServiceSoapClient();
+                string output = client.ConvertTextToBraille(txtInput.Text);
+                int dotAmount = client.GetDotsAmount(txtInput.Text);
 
-            this.lblBraillePreview.Text = output;
-            this.lblDisplayDotAmount.Text = dotAmount.ToString();
+                this.lblBraillePreview.Text = output;
+                this.lblDisplayDotAmount.Text = dotAmount.ToString();
+            }
+            catch (System.ServiceModel.EndpointNotFoundException ex)
+            {
+                Response.Redirect("~/404.aspx");
+            }
         }
     }
 }
