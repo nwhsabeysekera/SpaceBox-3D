@@ -386,6 +386,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .top-0 {
   top: 0px;
 }
+.z-0 {
+  z-index: 0;
+}
 .z-10 {
   z-index: 10;
 }
@@ -394,9 +397,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 }
 .z-30 {
   z-index: 30;
-}
-.z-0 {
-  z-index: 0;
 }
 .m-20 {
   margin: 5rem;
@@ -408,8 +408,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mr-2 {
+  margin-right: 0.5rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -459,8 +465,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .border-0 {
   border-width: 0px;
 }
-.border-b-4 {
-  border-bottom-width: 4px;
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 .border-l-0 {
   border-left-width: 0px;
@@ -490,13 +496,16 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .p-20 {
   padding: 5rem;
 }
+.p-4 {
+  padding: 1rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
@@ -513,10 +522,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 .font-readex {
   font-family: Readex Pro, sans-serif;
 }
-.text-h1-color {
-  --tw-text-opacity: 1;
-  color: rgb(230 160 45 / var(--tw-text-opacity));
-}
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -529,6 +534,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     border-color: #3B3B3B;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     outline: none;
+    border-radius: 4px;
 }
 
 .txt-custom:focus {
@@ -546,6 +552,11 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     font-size: 24px;
     color: #686868;
     width: 340px;
+}
+
+.top-rounded {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .hover\:bg-secondary-grey:hover {

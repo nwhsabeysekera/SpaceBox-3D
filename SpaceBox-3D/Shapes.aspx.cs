@@ -49,12 +49,6 @@ namespace SpaceBox_3D
             UpdateShapeVisibility();
         }
 
-        protected void TextBox_GotFocus(object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            textBox.BackColor = System.Drawing.ColorTranslator.FromHtml("#686868");
-        }
-
         private void ClearValidationMessages()
         {
             lblRadiusValidate.Text = "";
