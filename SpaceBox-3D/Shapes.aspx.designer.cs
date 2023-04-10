@@ -159,6 +159,15 @@ namespace SpaceBox_3D
         protected global::System.Web.UI.WebControls.TextBox CenterY;
 
         /// <summary>
+        /// lblCenterPointValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCenterPointValidate;
+
+        /// <summary>
         /// triangle control.
         /// </summary>
         /// <remarks>
@@ -310,6 +319,15 @@ namespace SpaceBox_3D
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAngleC;
+
+        /// <summary>
+        /// lblAnglesValidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAnglesValidate;
 
         /// <summary>
         /// btnApply control.

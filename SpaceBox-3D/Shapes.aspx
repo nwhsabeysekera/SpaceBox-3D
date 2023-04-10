@@ -36,13 +36,13 @@
 
                                 <asp:TextBox ID="Length" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number"  PlaceHolder="Length || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
 
-                                <asp:Label ID="lblLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red"></asp:Label>
+                                <asp:Label ID="lblLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                                 <asp:Label ID="lblWidth" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Width" CssClass="mt-2"></asp:Label>
                
                                 <asp:TextBox ID="Width" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Width || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
 
-                                <asp:Label ID="lblWidthValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red" ></asp:Label>
+                                <asp:Label ID="lblWidthValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F" ></asp:Label>
 
                             </div>
 
@@ -55,7 +55,7 @@
 
                                 <asp:TextBox ID="Radius" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="294px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Radius || 0mm" CssClass="txt-custom txt-custom:focus" AutoPostBack="True"></asp:TextBox>
 
-                                <asp:Label ID="lblRadiusValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red"></asp:Label>
+                                <asp:Label ID="lblRadiusValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                                 <asp:Label ID="lblCenterPoint" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Center Point"></asp:Label>
               
@@ -66,37 +66,39 @@
 
                                     <asp:TextBox ID="CenterY" runat="server" BackColor="#3B3B3B" ForeColor="White" Width="140px" Height="40px" Font-Names="readex pro deca medium" Font-Size="14px" TextMode="Number" PlaceHolder="Y axis" CssClass="txt-custom txt-custom:focus"></asp:TextBox>         
                                    
-                               </div>                             
+                               </div>
+                                
+                                <asp:Label ID="lblCenterPointValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                             </div>
 
             
                             <!-- Triangle -->
 
-                            <div class="flex flex-col gap-2 mb-20" id="triangle" runat="server">
+                            <div class="flex flex-col gap-2 mb-5" id="triangle" runat="server">
 
                                 <asp:Label ID="lblSide_a" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side A"></asp:Label>
 
                                 <asp:TextBox ID="SideALength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Width="294px" Height="40px" TextMode="Number" ForeColor="White" PlaceHolder="Side A | mm" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
                 
-                                <asp:Label ID="lblSideALengthValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red"></asp:Label>
+                                <asp:Label ID="lblSideALengthValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                                 <asp:Label ID="lblSide_b" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side B" CssClass="mt-2"></asp:Label>                            
 
                                 <asp:TextBox ID="SideBLength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="40px" TextMode="Number" Width="294px" ForeColor="White" PlaceHolder="Side B || mm" BorderColor="#3B3B3B" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
 
-                                <asp:Label ID="lblSideBLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red"></asp:Label>
+                                <asp:Label ID="lblSideBLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                                 <asp:Label ID="lblSide_c" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Side C" CssClass="mt-2"></asp:Label>
 
                                 <asp:TextBox ID="SideCLength" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="40px" TextMode="Number" Width="294px" ForeColor="White" PlaceHolder="Side C || mm" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
 
-                                <asp:Label ID="lblSideCLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="readex pro deca medium" Font-Size="12px" ForeColor="Red"></asp:Label>
+                                <asp:Label ID="lblSideCLengthValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
                                 
                                 <asp:Label ID="lblAngles" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="Angles" CssClass="mt-2"></asp:Label>
 
                               
-                            <div class="flex flex-row max-w-[240px] justify-between gap-2">
+                                <div class="flex flex-row max-w-[240px] justify-between gap-2">
 
                                     <asp:Label ID="lblAngleA" runat="server" Font-Names="Readex Pro Deca" Font-Size="12pt" ForeColor="White" Text="A" CssClass="mt-2"></asp:Label>
 
@@ -111,6 +113,8 @@
                                     <asp:TextBox ID="txtAngleC" runat="server" BackColor="#3B3B3B" Font-Names="readex pro deca medium" Height="45px" TextMode="Number" Width="80px" ForeColor="White" PlaceHolder="0°" BorderColor="#686868" CssClass="txt-custom txt-custom:focus" ></asp:TextBox>
 
                                 </div>
+
+                                <asp:Label ID="lblAnglesValidate" runat="server" Width="294px" Height="15px" Font-Names="Readex Pro Deca" Font-Size="12px" ForeColor="#E84E4F"></asp:Label>
 
                             </div>
 

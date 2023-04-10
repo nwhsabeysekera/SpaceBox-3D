@@ -49,107 +49,142 @@ namespace SpaceBox_3D
             UpdateShapeVisibility();
         }
 
-        protected void btnApply_Click(object sender, EventArgs e)
+        private bool ValidateInputs()
         {
-            // Validate inputs before calling the web service
+            bool isValid = true;
+            lblRadiusValidate.Text = "";
+            lblCenterPointValidate.Text = "";
+            lblLengthValidate.Text = "";
+            lblWidthValidate.Text = "";
+            lblSideALengthValidate.Text = "";
+            lblSideBLengthValidate.Text = "";
+            lblSideCLengthValidate.Text = "";
+            lblAnglesValidate.Text = "";
+
             if (SelectShape.SelectedValue == "Circle")
             {
-                if (!double.TryParse(Radius.Text, out double radius) || radius <= 0)
+                double radius;
+                if (string.IsNullOrEmpty(Radius.Text))
+                {
+                    lblRadiusValidate.Text = "Please enter a radius.";
+                    isValid = false;
+                }
+                else if (!double.TryParse(Radius.Text, out radius) || radius <= 0)
                 {
                     lblRadiusValidate.Text = "Please enter a valid radius.";
-                    return;
+                    isValid = false;
+                }
+
+                if (string.IsNullOrEmpty(CenterX.Text) || string.IsNullOrEmpty(CenterY.Text))
+                {
+                    lblCenterPointValidate.Text = "Please enter values for both X and Y coordinates.";
+                    isValid = false;
                 }
             }
-
             else if (SelectShape.SelectedValue == "Rectangle")
             {
-                if (!double.TryParse(Length.Text, out double length) || length <= 0)
+                double length, width;
+                if (string.IsNullOrEmpty(Length.Text))
+                {
+                    lblLengthValidate.Text = "Please enter a length.";
+                    isValid = false;
+                }
+                else if (!double.TryParse(Length.Text, out length) || length <= 0)
                 {
                     lblLengthValidate.Text = "Please enter valid length.";
-                }
-                else
-                {
-                    lblLengthValidate.Text = "";
+                    isValid = false;
                 }
 
-                if (!double.TryParse(Width.Text, out double width) || width <= 0)
+                if (string.IsNullOrEmpty(Width.Text))
+                {
+                    lblWidthValidate.Text = "Please enter a width.";
+                    isValid = false;
+                }
+                else if (!double.TryParse(Width.Text, out width) || width <= 0)
                 {
                     lblWidthValidate.Text = "Please enter valid width.";
-                }
-                else
-                {
-                    lblWidthValidate.Text = "";
-                }
-
-                if (lblLengthValidate.Text != "" || lblWidthValidate.Text != "")
-                {
-                    return;
+                    isValid = false;
                 }
             }
-
             else if (SelectShape.SelectedValue == "Triangle")
             {
-                if (!double.TryParse(SideALength.Text, out double sideA) || sideA <= 0)
+                double sideA, sideB, sideC;
+                if (string.IsNullOrEmpty(SideALength.Text))
                 {
-                    lblSideALengthValidate.Text = "Please enter valid length.";
+                    lblSideALengthValidate.Text = "Please enter a length for side A.";
+                    isValid = false;
                 }
-                else
+                else if (!double.TryParse(SideALength.Text, out sideA) || sideA <= 0)
                 {
-                    lblSideALengthValidate.Text = "";
-                }
-
-                if (!double.TryParse(SideBLength.Text, out double sideB) || sideB <= 0)
-                {
-                    lblSideBLengthValidate.Text = "Please enter valid length.";
-                }
-                else
-                {
-                    lblSideBLengthValidate.Text = "";
+                    lblSideALengthValidate.Text = "Please enter valid length for side A.";
+                    isValid = false;
                 }
 
-                if (!double.TryParse(SideCLength.Text, out double sideC) || sideC <= 0)
+                if (string.IsNullOrEmpty(SideBLength.Text))
                 {
-                    lblSideCLengthValidate.Text = "Please enter valid length.";
+                    lblSideBLengthValidate.Text = "Please enter a length for side B.";
+                    isValid = false;
                 }
-                else
+                else if (!double.TryParse(SideBLength.Text, out sideB) || sideB <= 0)
                 {
-                    lblSideCLengthValidate.Text = "";
+                    lblSideBLengthValidate.Text = "Please enter valid length for side B.";
+                    isValid = false;
                 }
 
-                if (lblSideALengthValidate.Text != "" || lblSideBLengthValidate.Text != "" || lblSideCLengthValidate.Text != "")
+                if (string.IsNullOrEmpty(SideCLength.Text))
                 {
-                    return;
+                    lblSideCLengthValidate.Text = "Please enter a length for side C.";
+                    isValid = false;
+                }
+                else if (!double.TryParse(SideCLength.Text, out sideC) || sideC <= 0)
+                {
+                    lblSideCLengthValidate.Text = "Please enter valid length for side C.";
+                    isValid = false;
+                }
+
+                if (string.IsNullOrEmpty(txtAngleA.Text) || string.IsNullOrEmpty(txtAngleB.Text) || string.IsNullOrEmpty(txtAngleC.Text))
+                {
+                    lblAnglesValidate.Text = "Please enter values for the Angles A, B and C.";
+                    isValid = false;
                 }
             }
 
+            return isValid;
+        }
 
-            ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
 
-            // call the web method
-            ShapeParameters shapeParams = new ShapeParameters();
-
-            string selectedShape = SelectShape.SelectedValue;
-
-            // Get the values of the shape parameters from the textboxes
-            if (selectedShape == "Circle")
+            if (ValidateInputs())
             {
-                shapeParams.Radius = double.Parse(Radius.Text);
-            }
-            else if (selectedShape == "Rectangle")
-            {
-                shapeParams.Length = double.Parse(Length.Text);
-                shapeParams.Width = double.Parse(Width.Text);
-            }
-            else if (selectedShape == "Triangle")
-            {
-                shapeParams.SideA = double.Parse(SideALength.Text);
-                shapeParams.SideB = double.Parse(SideBLength.Text);
-                shapeParams.SideC = double.Parse(SideCLength.Text);
-            }
+                ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
-            int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+                // call the web method
+                ShapeParameters shapeParams = new ShapeParameters();
 
-            lblDisplayDotAmount.Text = DotAmount.ToString();
+                string selectedShape = SelectShape.SelectedValue;
+
+                // Get the values of the shape parameters from the textboxes
+                if (selectedShape == "Circle")
+                {
+                    shapeParams.Radius = double.Parse(Radius.Text);
+                }
+                else if (selectedShape == "Rectangle")
+                {
+                    shapeParams.Length = double.Parse(Length.Text);
+                    shapeParams.Width = double.Parse(Width.Text);
+                }
+                else if (selectedShape == "Triangle")
+                {
+                    shapeParams.SideA = double.Parse(SideALength.Text);
+                    shapeParams.SideB = double.Parse(SideBLength.Text);
+                    shapeParams.SideC = double.Parse(SideCLength.Text);
+                }
+
+                int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
+
+                lblDisplayDotAmount.Text = DotAmount.ToString();
+            }
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
