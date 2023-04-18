@@ -15,6 +15,8 @@ namespace SpaceBox_3D
 {
     public partial class Shapes : System.Web.UI.Page
     {
+        ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UpdateShapeVisibility();
@@ -239,12 +241,16 @@ namespace SpaceBox_3D
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
+            CalculateDotAmount();
+        }
 
+        private void CalculateDotAmount()
+        {
             if (ValidateInputs())
             {
                 try
                 {
-                    ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
+                    
 
                     // call the web method
                     ShapeParameters shapeParams = new ShapeParameters();

@@ -9,6 +9,8 @@ namespace SpaceBox_3D
 {
     public partial class Braille : System.Web.UI.Page
     {
+        BrailleServiceReference.BrailleServiceSoapClient client = new BrailleServiceReference.BrailleServiceSoapClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,16 +23,13 @@ namespace SpaceBox_3D
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            lblDisplayDotAmount.Text = "";
-            txtInput.Text = "";
-            lblBraillePreview.Text = "";
+            Response.Redirect(Request.RawUrl);
         }
 
         protected void btnConvert_Click(object sender, EventArgs e)
         {
             try
-            {
-                BrailleServiceReference.BrailleServiceSoapClient client = new BrailleServiceReference.BrailleServiceSoapClient();
+            {                
                 string output = client.ConvertTextToBraille(txtInput.Text);
                 int dotAmount = client.GetDotsAmount(txtInput.Text);
 
