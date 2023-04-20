@@ -6,7 +6,7 @@
         <div class="container mx-auto px-4" style="max-width: 900px;">
             <div class="flex flex-col gap-20 justify-center">
                 <div class="flex justify-center">
-                    <asp:Button ID="btnHome" runat="server" Text="spaceBox 3D" BackColor="#2F2F2F" Font-Names="Readex Pro Deca" Font-Size="60pt" ForeColor="#E6A02D" Height="116px" Width="519px" style="border-radius: 30px;" OnClick="btnHome_Click" />
+                    <asp:Button ID="btnHome" runat="server" Text="SpaceBox 3D" BackColor="#2F2F2F" Font-Names="Readex Pro Deca" Font-Size="60pt" ForeColor="#E6A02D" Height="116px" Width="519px" style="border-radius: 30px;" OnClick="btnHome_Click" />
                 </div>                   
 
                 <div class="flex text-[14px] justify-center font-readex"> 
