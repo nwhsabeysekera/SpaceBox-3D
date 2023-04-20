@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using NLog;
 
 namespace SpaceBoxService.BrailleService.App_Code
 {
     public class BrailleTranslator
     {
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private BrailleTranslator() { }
 
         private static readonly BrailleTranslator instance = new BrailleTranslator();
@@ -309,6 +311,7 @@ namespace SpaceBoxService.BrailleService.App_Code
 
         public string ConvertTextToBraille(string input)
         {
+            Logger.Info(input,"Start to Extract words from the input.");
             List<string> words = ExtractWords(input);
             StringBuilder result = new StringBuilder();
 
@@ -325,7 +328,7 @@ namespace SpaceBoxService.BrailleService.App_Code
                 result.Append(" "); // add space between words
             }
 
-            return result.ToString().Trim(); // remove trailing space
+            return result.ToString().Trim(); // remove trailing space           
         }
     }
 }
