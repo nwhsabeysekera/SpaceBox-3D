@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace SpaceBox_3D
 {
     public partial class Braille : System.Web.UI.Page
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         BrailleServiceReference.BrailleServiceSoapClient client = new BrailleServiceReference.BrailleServiceSoapClient();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,7 +32,8 @@ namespace SpaceBox_3D
         protected void btnConvert_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                Logger.Info($"Braille translator started.");
                 string output = client.ConvertTextToBraille(txtInput.Text);
                 int dotAmount = client.GetDotsAmount(txtInput.Text);
 
@@ -39,6 +43,7 @@ namespace SpaceBox_3D
             catch (System.ServiceModel.EndpointNotFoundException ex)
             {
                 Response.Redirect("~/404.aspx");
+                Logger.Error(ex,"Goodbye cruel world!");
             }
         }
 
