@@ -41,5 +41,10 @@ namespace SpaceBox_3D
                 Response.Redirect("~/404.aspx");
             }
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }
