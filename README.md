@@ -3,7 +3,6 @@
 This tool is designed to enable blind people to touch and feel drawings using a newly constructed 3D printer. The tool consists of a client application that allows users to select standard shapes from a drop down list or enter text to be converted to Braille. The server-side component is a computation service that provides the required dot amount or liquid amount based on the selected shape or Braille text.
 
 
-
 **Features** 
 
     • Select standard shapes from a drop-down list (circle, triangle, and rectangle)
@@ -24,7 +23,6 @@ This tool is designed to enable blind people to touch and feel drawings using a 
     • Implement using .NET framework
 
 
-
 **Usage**
 
     • The Braille Printer Service provides a drop-down list of supported shapes, including circle, triangle, and rectangle, as well as 
@@ -39,12 +37,11 @@ This tool is designed to enable blind people to touch and feel drawings using a 
       computation and send the results back to the client application.
 
 
-
 **Technologies Used**
 
     • .NET Framework for development
   
-    • HTTP/SOAP for communication between the client and service
+    • SOAP architecture for communication between the client and service
    
     • Design patterns for best practices
  
