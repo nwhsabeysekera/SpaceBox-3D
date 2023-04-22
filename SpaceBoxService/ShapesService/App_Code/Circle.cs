@@ -15,12 +15,7 @@ namespace SpaceBoxService.ShapesService.App_Code
         }
 
         public void SetParameters(ShapeParameters parameters)
-        {
-            if (parameters.Radius <= 0)
-            {
-                throw new ArgumentException("Invalid radius for Circle");
-            }
-
+        {         
             radius = parameters.Radius;
         }
 
