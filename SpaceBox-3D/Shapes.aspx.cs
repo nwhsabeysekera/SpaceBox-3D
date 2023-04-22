@@ -175,7 +175,6 @@ namespace SpaceBox_3D
                 Logger.Error("Triangle SideCLength value is Null.");
             }
 
-            //validate the angles
             else if (!double.TryParse(SideCLength.Text, out sideC) || sideC <= 0)
             {
                 lblSideCLengthValidate.Text = "Please enter valid length for side C.";
@@ -183,6 +182,7 @@ namespace SpaceBox_3D
                 Logger.Error("Triangle SideCLength value is out of bound.");
             }
 
+            //validate the angles
             if (string.IsNullOrEmpty(txtAngleA.Text) || string.IsNullOrEmpty(txtAngleB.Text) || string.IsNullOrEmpty(txtAngleC.Text))
             {
                 lblAnglesValidate.Text = "Please enter values for the Angles A, B and C.";
@@ -248,15 +248,15 @@ namespace SpaceBox_3D
 
             if (SelectShape.SelectedValue == "Circle")
             {
-                ValidateCircle();
+                isValid = ValidateCircle();
             }
             else if (SelectShape.SelectedValue == "Rectangle")
             {
-                ValidateRectangle();
+                isValid = ValidateRectangle();
             }
             else if (SelectShape.SelectedValue == "Triangle")
             {
-                ValidateTriangle();
+                isValid = ValidateTriangle();
             }
 
             return isValid;
@@ -270,12 +270,11 @@ namespace SpaceBox_3D
 
         private void CalculateDotAmount()
         {
-            if (ValidateInputs())
-            {
+            bool isValid = ValidateInputs();
+            if (!isValid) return;
+            
                 try
-                {
-                    
-
+                {                   
                     // call the web method
                     ShapeParameters shapeParams = new ShapeParameters();
 
@@ -309,7 +308,7 @@ namespace SpaceBox_3D
                     Logger.Error(ex, "Error! There is a Error in  CalculateDotAmount() method.");
                     Response.Redirect("~/404.aspx");
                 }
-            }
+            
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
