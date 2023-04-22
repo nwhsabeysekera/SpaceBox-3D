@@ -15,7 +15,7 @@ This tool is designed to enable blind people to touch and feel drawings using a 
   
     • Count the number of dots for Braille text to compute the required liquid amount
   
-    • Access the service via HTTP/SOAP
+    • Access the service via SOAP
 
     • Retrieve the list of supported shapes and Braille characters from the service
 
@@ -44,9 +44,10 @@ This tool is designed to enable blind people to touch and feel drawings using a 
 
     • .NET Framework for development
   
-    • HTTP/SOAP for communication between the client and service
+    • SOAP architecture for communication between the client and service
    
     • Design patterns for best practices
  
  
-View the figma design from this link (view only) -  https://www.figma.com/file/8b3ZQ5WCncqY1gkHcyITbn/3D-Printer?node-id=0%3A1&t=Tuy6caKlXYyGkgdy-1
+ 
+**View the figma design from this link (view only)** -  https://www.figma.com/file/8b3ZQ5WCncqY1gkHcyITbn/3D-Printer?node-id=0%3A1&t=Tuy6caKlXYyGkgdy-1
