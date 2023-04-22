@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,8 @@ namespace SpaceBoxService.BrailleService.App_Code
 {
     public class DotsCounter
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         private DotsCounter() { }
 
         private static readonly DotsCounter instance = new DotsCounter();
@@ -117,7 +120,7 @@ namespace SpaceBoxService.BrailleService.App_Code
                         break;
                 }
             }
-
+            Logger.Info("Calculate required Dot-amount for The Braille Translator.");
             return DotAmount;
             
         }

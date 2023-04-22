@@ -21,11 +21,13 @@ namespace SpaceBox_3D
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
+            Logger.Info("Click the btnClear_Click.");
             txtInput.Text = "";
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            Logger.Info("Click the btnCancel_Click.");
             Response.Redirect(Request.RawUrl);
         }
 
@@ -33,22 +35,25 @@ namespace SpaceBox_3D
         {
             try
             {
-                Logger.Info($"Braille translator started.");
+                Logger.Info("Click the btnConvert_Click.");
                 string output = client.ConvertTextToBraille(txtInput.Text);
                 int dotAmount = client.GetDotsAmount(txtInput.Text);
-
+               
                 this.lblBraillePreview.Text = output;
+                Logger.Info("The translation to Braille is successful.");
                 this.lblDisplayDotAmount.Text = dotAmount.ToString();
+                Logger.Info("Successfully displayed the dot-amount.");
             }
             catch (System.ServiceModel.EndpointNotFoundException ex)
             {
                 Response.Redirect("~/404.aspx");
-                Logger.Error(ex,"Goodbye cruel world!");
+                Logger.Error(ex,"Error! the output did not dispayed.");
             }
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
+            Logger.Info("Click the btnHomeClick.");
             Response.Redirect("~/Default.aspx");
         }
     }

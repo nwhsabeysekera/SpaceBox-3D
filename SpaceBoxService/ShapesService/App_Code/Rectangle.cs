@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,8 @@ namespace SpaceBoxService.ShapesService.App_Code
 {
     public class Rectangle : IShape
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         private double length;
         private double width;
 
@@ -31,6 +34,7 @@ namespace SpaceBoxService.ShapesService.App_Code
         {
             //standard diameter of a braille dot (1.6mm) + standard space between two braille dots (2.5mm)
             double standard = 4.1;
+            Logger.Info("Calculate required Dot-amount for The Rectangle.");
             return (int)Math.Round(((width*2)+(length*2))/standard);
         }
     }

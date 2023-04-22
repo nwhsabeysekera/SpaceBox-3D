@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,8 @@ namespace SpaceBoxService.ShapesService.App_Code
 {
     public class Circle : IShape
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         private double radius;
 
         public ShapeParameters GetParameters()
@@ -23,7 +26,8 @@ namespace SpaceBoxService.ShapesService.App_Code
         {
             //standard diameter of a braille dot (1.6mm) + standard space between two braille dots (2.5mm)
             double standard = 4.1;
-            return (int)Math.Round(2 * radius * Math.PI / standard);
+            Logger.Info("Calculate required Dot-amount for the Circle.");
+            return (int)Math.Round(2 * radius * Math.PI / standard);           
         }
     }
 }

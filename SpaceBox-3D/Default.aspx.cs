@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace SpaceBox_3D
 {
     public partial class _Default : Page
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,11 +18,13 @@ namespace SpaceBox_3D
 
         protected void btnShapes_Click(object sender, EventArgs e)
         {
+            Logger.Info("Click the btnShapes_Click.");
             Response.Redirect("Shapes.aspx");
         }
 
         protected void btnBraille_Click(object sender, EventArgs e)
         {
+            Logger.Info("Click the btnbraille_Click.");
             Response.Redirect("Braille.aspx");
         }
     }

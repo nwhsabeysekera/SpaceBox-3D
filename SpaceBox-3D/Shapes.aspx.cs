@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NLog;
 using SpaceBox_3D.ShapesServiceReference; 
 
 
@@ -15,6 +16,8 @@ namespace SpaceBox_3D
 {
     public partial class Shapes : System.Web.UI.Page
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
+
         ShapesServiceReference.ShapesServiceSoapClient client = new ShapesServiceReference.ShapesServiceSoapClient();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,6 +29,7 @@ namespace SpaceBox_3D
         {
             if (SelectShape.SelectedValue == "Circle")
             {
+                Logger.Info("Select the Circle as the Shape.");
                 circle.Visible = true;
                 rectangle.Visible = false;
                 triangle.Visible = false;
@@ -33,6 +37,7 @@ namespace SpaceBox_3D
 
             if (SelectShape.SelectedValue == "Rectangle")
             {
+                Logger.Info("Select the Rectangle as the Shape.");
                 circle.Visible = false;
                 rectangle.Visible = true;
                 triangle.Visible = false;
@@ -40,6 +45,7 @@ namespace SpaceBox_3D
 
             if (SelectShape.SelectedValue == "Triangle")
             {
+                Logger.Info("Select the Triangle as the Shape.");
                 circle.Visible = false;
                 rectangle.Visible = false;
                 triangle.Visible = true;
@@ -61,6 +67,7 @@ namespace SpaceBox_3D
             lblSideBLengthValidate.Text = "";
             lblSideCLengthValidate.Text = "";
             lblAnglesValidate.Text = "";
+            Logger.Info("Cleared Text fields.");
         }
 
         private bool ValidateCircle()
@@ -72,20 +79,23 @@ namespace SpaceBox_3D
             {
                 lblRadiusValidate.Text = "Please enter a radius.";
                 isValid = false;
+                Logger.Error("Circle Radius value is Null.");
             }
             else if (!double.TryParse(Radius.Text, out radius) || radius <= 0)
             {
                 lblRadiusValidate.Text = "Please enter a valid radius.";
-                isValid = false;
+                isValid = false;            
+                Logger.Error("Circle Radius value is out of bound.");              
             }
 
             if (string.IsNullOrEmpty(CenterX.Text) || string.IsNullOrEmpty(CenterY.Text))
             {
                 lblCenterPointValidate.Text = "Please enter values for both X and Y coordinates.";
                 isValid = false;
+                Logger.Error("Circle's X or Y value is Null.");
             }
-
-            return isValid;
+            Logger.Error("Validation of the Circle is successful.");
+            return isValid;         
         }
 
         private bool ValidateRectangle()
@@ -97,24 +107,28 @@ namespace SpaceBox_3D
             {
                 lblLengthValidate.Text = "Please enter a length.";
                 isValid = false;
+                Logger.Error("Rectangle Length value is Null.");
             }
             else if (!double.TryParse(Length.Text, out length) || length <= 0)
             {
                 lblLengthValidate.Text = "Please enter valid length.";
                 isValid = false;
+                Logger.Error("Rectangle Length value is out of bound.");
             }
 
             if (string.IsNullOrEmpty(Width.Text))
             {
                 lblWidthValidate.Text = "Please enter a width.";
                 isValid = false;
+                Logger.Error("Rectangle Width value is Null.");
             }
             else if (!double.TryParse(Width.Text, out width) || width <= 0)
             {
                 lblWidthValidate.Text = "Please enter valid width.";
                 isValid = false;
+                Logger.Error("Rectangle Width value is out of bound.");
             }
-
+            Logger.Error("Validation of the Rectangle is successful.");
             return isValid;
         }
 
@@ -132,28 +146,33 @@ namespace SpaceBox_3D
             {
                 lblSideALengthValidate.Text = "Please enter a length for side A.";
                 isValid = false;
+                Logger.Error("Triangle SideALength value is Null.");
             }
             else if (!double.TryParse(SideALength.Text, out sideA) || sideA <= 0)
             {
                 lblSideALengthValidate.Text = "Please enter valid length for side A.";
                 isValid = false;
+                Logger.Error("Triangle SideALength value is out of bound.");
             }
 
             if (string.IsNullOrEmpty(SideBLength.Text))
             {
                 lblSideBLengthValidate.Text = "Please enter a length for side B.";
                 isValid = false;
+                Logger.Error("Triangle SideBLength value is Null.");
             }
             else if (!double.TryParse(SideBLength.Text, out sideB) || sideB <= 0)
             {
                 lblSideBLengthValidate.Text = "Please enter valid length for side B.";
                 isValid = false;
+                Logger.Error("Triangle SideBLength value is out of bound.");
             }
 
             if (string.IsNullOrEmpty(SideCLength.Text))
             {
                 lblSideCLengthValidate.Text = "Please enter a length for side C.";
                 isValid = false;
+                Logger.Error("Triangle SideCLength value is Null.");
             }
 
             //validate the angles
@@ -161,12 +180,14 @@ namespace SpaceBox_3D
             {
                 lblSideCLengthValidate.Text = "Please enter valid length for side C.";
                 isValid = false;
+                Logger.Error("Triangle SideCLength value is out of bound.");
             }
 
             if (string.IsNullOrEmpty(txtAngleA.Text) || string.IsNullOrEmpty(txtAngleB.Text) || string.IsNullOrEmpty(txtAngleC.Text))
             {
                 lblAnglesValidate.Text = "Please enter values for the Angles A, B and C.";
                 isValid = false;
+                Logger.Error("Triangle one or more Angles values are Null.");
             }
 
             // Check if the sides form a valid triangle
@@ -174,6 +195,7 @@ namespace SpaceBox_3D
             {
                 lblSideCLengthValidate.Text = "The entered sides do not form a valid triangle.";
                 isValid = false;
+                Logger.Error("Entered Triangle values do not form a valid Triangle.");
             }
 
             // Check if the angles form a valid triangle
@@ -181,8 +203,9 @@ namespace SpaceBox_3D
             {
                 lblAnglesValidate.Text = "The entered angles do not form a valid triangle.";
                 isValid = false;
+                Logger.Error("Entered Triangle Angles values do not form a valid Triangle.");
             }
-
+            Logger.Error("Validation of the Triangle is successful.");
             return isValid;
         }
 
@@ -242,6 +265,7 @@ namespace SpaceBox_3D
         protected void btnApply_Click(object sender, EventArgs e)
         {
             CalculateDotAmount();
+            Logger.Info("Click the btnApply_Click.");
         }
 
         private void CalculateDotAmount()
@@ -277,10 +301,12 @@ namespace SpaceBox_3D
                     int DotAmount = client.CalculateRequiredDotsForShape(selectedShape, shapeParams);
 
                     lblDisplayDotAmount.Text = DotAmount.ToString();
+                    Logger.Info("Display the required Dot amount.");
                 }
                 catch (System.ServiceModel.EndpointNotFoundException ex)
                 {
                     // redirect to custom error page for 404
+                    Logger.Error(ex, "Error! There is a Error in  CalculateDotAmount() method.");
                     Response.Redirect("~/404.aspx");
                 }
             }
@@ -310,16 +336,19 @@ namespace SpaceBox_3D
             txtAngleC.Text = "";
             
             SelectShape.SelectedIndex = 0;
+            Logger.Info("Click the btnClear_Click.");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {         
             Response.Redirect(Request.RawUrl);
+            Logger.Info("Click the btnCancel_Click.");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Default.aspx");
+            Logger.Info("Click the btnHome_Click.");
         }
     }
 }
