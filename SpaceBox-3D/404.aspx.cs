@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace SpaceBox_3D
 {
     public partial class _404 : System.Web.UI.Page
     {
+        private static Logger Logger = LogManager.GetCurrentClassLogger();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,6 +18,7 @@ namespace SpaceBox_3D
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
+            Logger.Info("Redirect to the Home page from Braille translator page.");
             Response.Redirect("~/Default.aspx");
         }
     }

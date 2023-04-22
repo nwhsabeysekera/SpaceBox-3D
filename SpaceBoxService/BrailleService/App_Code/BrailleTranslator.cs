@@ -76,9 +76,25 @@ namespace SpaceBoxService.BrailleService.App_Code
 
         public static List<string> ExtractWords(string input)
         {
+            const int maxWordCount = 1000;
             // Split up a sentence based on whitespace (" ") and new line ("\n") chars.
             string[] words = input.Split(new[] { ' ', '\n' });
-            return words.ToList();
+            if (words.Length > 0 && words.Length <= maxWordCount)
+            {
+                Logger.Info($"Extracted {words.Length} words from the input:{input}");
+                return words.ToList();
+            }
+            else if (words.Length == 0)
+            {
+                Logger.Warn("Input is empty.");
+                return null;
+            }
+            else // If number of words exceeds the limit
+            {
+                Logger.Warn($"Input contains {words.Length} words, which exceeds the limit of {maxWordCount} words.");
+                words = new string[0]; // Empty the words list
+                return words.ToList();
+            }
         }
 
         public static string NumbersHandler(string input)
@@ -120,6 +136,7 @@ namespace SpaceBoxService.BrailleService.App_Code
             {
                 result.Append(NUMBER);
             }
+            Logger.Info("Successfully translated numbers to Braille.");
             return result.ToString();
         }
         public static (string, List<(char, int)>) TrimWord(string input)
@@ -146,6 +163,7 @@ namespace SpaceBoxService.BrailleService.App_Code
             // Pad the trimmed word with spaces to match the length of the input string
             trimmedWord.Append(' ', input.Length - trimmedWord.Length);
 
+            Logger.Info("Successfully Trim Symboles from word.");
             return (trimmedWord.ToString(), symbolPositions);
         }
         public static string ContractionsHandler(string input, List<(char, int)> symbolPositions)
@@ -179,6 +197,7 @@ namespace SpaceBoxService.BrailleService.App_Code
                     result.Append(input);
                 }
             }
+            Logger.Info("Successfully translated Contractions to Braille.");
             return result.ToString();
         }
 
@@ -187,9 +206,11 @@ namespace SpaceBoxService.BrailleService.App_Code
             // Return true if a char is braille.
             if (character.Length > 1)
             {
+                Logger.Warn($"Error! the character -{character} did not identify as a Braille character.");
                 return false;
             }
 
+            Logger.Info($"Successfully identified the character -{character} as a Braille character.");
             return mapLettersToBraille.ContainsValue(character)
                 || mapNumberToBraille.ContainsValue(character)
                 || mapSymbolsToBraille.ContainsValue(character)
@@ -251,6 +272,7 @@ namespace SpaceBoxService.BrailleService.App_Code
                     }
                 }
             }
+            Logger.Info("Successfully translated letters to Braille.");
             return result.ToString();
         }
 
@@ -266,6 +288,7 @@ namespace SpaceBoxService.BrailleService.App_Code
                 }
             }
 
+            Logger.Info("Successfully added Trimed characters back.");
             return result.ToString();
         }
 
@@ -306,29 +329,36 @@ namespace SpaceBoxService.BrailleService.App_Code
                     }
                 }
             }
+            Logger.Info("Successfully translated Symbols to Braille.");
             return result.ToString();
         }
 
         public string ConvertTextToBraille(string input)
         {
-            Logger.Info(input,"Start to Extract words from the input.");
             List<string> words = ExtractWords(input);
             StringBuilder result = new StringBuilder();
-
-            foreach (string word in words)
+            if (words.Count==0)
             {
-                string numconverted = NumbersHandler(word);
-                var (trimmedWord, symbolPositions) = TrimWord(numconverted);
-                string contractionsconverted = ContractionsHandler(trimmedWord, symbolPositions);
-                string lettersconverted = LettersHandler(contractionsconverted, symbolPositions);
-                string addedshavings = Addshavings(lettersconverted, symbolPositions);
-                string symboleshandeled = SymbolHandler(addedshavings);
+                result.Append("The input is Empty or exceeds the max words count of 1000.");
+                return result.ToString();
+            }         
+            else 
+            {
+                foreach (string word in words)
+                {
+                    string numconverted = NumbersHandler(word);
+                    var (trimmedWord, symbolPositions) = TrimWord(numconverted);
+                    string contractionsconverted = ContractionsHandler(trimmedWord, symbolPositions);
+                    string lettersconverted = LettersHandler(contractionsconverted, symbolPositions);
+                    string addedshavings = Addshavings(lettersconverted, symbolPositions);
+                    string symboleshandeled = SymbolHandler(addedshavings);
 
-                result.Append(symboleshandeled);
-                result.Append(" "); // add space between words
-            }
+                    result.Append(symboleshandeled);
+                    result.Append(" "); // add space between words
+                }
 
-            return result.ToString().Trim(); // remove trailing space           
+                return result.ToString().Trim(); // remove trailing space 
+            }          
         }
     }
 }

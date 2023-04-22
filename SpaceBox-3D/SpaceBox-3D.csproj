@@ -156,6 +156,7 @@
     <Content Include="Connected Services\ShapesServiceReference\SpaceBox_3D.ShapesServiceReference.CalculateRequiredDotsForShapeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="NLog.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\icon.png" />
     <Content Include="Images\404-background.png" />
