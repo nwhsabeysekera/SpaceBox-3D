@@ -349,5 +349,10 @@ namespace SpaceBox_3D
             Response.Redirect("~/Default.aspx");
             Logger.Info("Click the btnHome_Click.");
         }
+
+        protected void btnPrint_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Print.aspx");
+        }
     }
 }
