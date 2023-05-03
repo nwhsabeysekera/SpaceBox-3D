@@ -28,6 +28,12 @@
     width: 340px;
 }
 
+.print-custom {
+    font-family: 'Readex Pro';
+    font-size: 18px;
+    color: #ffffff;
+}
+
 .top-rounded {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
